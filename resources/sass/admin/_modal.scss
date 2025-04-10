@@ -1,0 +1,36 @@
+.modal-title {
+    color: $label-color;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.vista-previa {
+    display: block;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 20px;
+    transition: all 0.3s ease; /* Para animar el cambio de color en el fondo */
+}
+
+.image-container:hover .vista-previa {
+    filter: brightness(0.5); /* Fondo oscuro */
+}
+
+.btn-close-eliminar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url(../../../public/images/close.svg) no-repeat center;
+    filter: invert(1); /* Cambia el color de la imagen */
+    width: 1.1em;
+    height: 1.1em;
+    border: none;
+    display: none; /* No se ve al principio */
+}
+
+.image-container:hover .btn-close-eliminar {
+    display: block; /* Aparece solo cuando el mouse pasa por encima */
+}

@@ -1,0 +1,12 @@
+.carousel-inner {
+    height: 700px;
+
+    .carousel-item {
+        margin-top: -200px;
+
+        .carousel-caption{
+            height: 150px;
+            top: 45%;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.nav-link {
+    color: $body-bg !important;
+
+    &.active{
+        color: $label-hover !important;
+    }
+}

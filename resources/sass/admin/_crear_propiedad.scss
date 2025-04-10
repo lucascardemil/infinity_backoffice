@@ -1,0 +1,84 @@
+.upload-container {
+    width: 100%;
+}
+
+.drop-area {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.drop-area:hover {
+    background-color: $label-hover;
+}
+
+.file-label {
+    cursor: pointer;
+}
+
+.imagenes-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.vista-previa-propiedad {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.vista-previa-propiedad.principal {
+    border: 6px solid $label-hover;
+}
+
+
+.image-container:hover .vista-previa-propiedad {
+    filter: brightness(0.5);
+    /* Fondo oscuro */
+}
+
+.btn-close-eliminar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: url(../../../public/images/close.svg) no-repeat center;
+    filter: invert(1);
+    /* Cambia el color de la imagen */
+    width: 1.1em;
+    height: 1.1em;
+    border: none;
+    display: none;
+    /* No se ve al principio */
+}
+
+.image-container:hover .btn-close-eliminar {
+    display: block;
+    /* Aparece solo cuando el mouse pasa por encima */
+}
+
+.card-tipo-propiedad {
+    position: relative;
+    margin-top: -50px;
+    padding: var(--bs-card-img-overlay-padding);
+    border-radius: var(--bs-card-inner-border-radius);
+}
+
+.cargando-propiedad-creada {
+    height: 500px;
+}
+
+.texto-cargando-propiedad {
+    color: $label-hover;
+}
