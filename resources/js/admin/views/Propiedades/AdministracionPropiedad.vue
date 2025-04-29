@@ -46,8 +46,7 @@
             </table>
         </div>
         <EditarPropiedad ref="editarPropiedadModal" :propiedad_editar="selectedPropiedad"
-            :tipos_propiedades="tipos_propiedades" :formatos_negocios="formatos_negocios" :loading_uf="loading_uf"
-            :input_uf="input_uf" :valorUF="valorUF" :ubicaciones="ubicaciones"
+            :tipos_propiedades="tipos_propiedades" :formatos_negocios="formatos_negocios" :ubicaciones="ubicaciones"
             :categorias_secundarias="categorias_secundarias" :atributos_adicionales="atributos_adicionales"
             @imagenes-eliminadas-editar="imagenesEliminadasEditar" />
         
@@ -66,9 +65,6 @@ export default {
     props: {
         tipos_propiedades: Array,
         formatos_negocios: Array,
-        loading_uf: Boolean,
-        input_uf: Boolean,
-        valorUF: Number,
         ubicaciones: Array,
         categorias_secundarias: Array,
         atributos_adicionales: Array,

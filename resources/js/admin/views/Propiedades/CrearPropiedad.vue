@@ -47,19 +47,10 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <LoadingComponent v-if="loading_uf"></LoadingComponent>
-                            <h6 class="text-white" v-else-if="!input_uf">
-                                Valor UF hoy:
-                                <span class="badge rounded-pill bg-warning text-dark">
-                                    {{
-                                        valorUF.toLocaleString("es-CL")
-                                    }}
-                                </span> CLP
-                            </h6>
-                            <div v-else class="mb-3">
+                            <div class="mb-3">
                                 <input class="form-control"
                                     :class="{ 'is-invalid': errors?.valor_pesos ? errors?.valor_pesos.length > 0 : '' }"
-                                    v-model="valorUF" placeholder="Valor UF" id="inputCrearPropiedadValorUF" />
+                                    v-model="valorUF" placeholder="Valor UF" id="inputCrearPropiedadValorUF" @input="convertir" />
                             </div>
                             <div class="input-group mb-3">
                                 <select class="form-select" id="selectValorUF" v-model="tipoConversion">
@@ -68,7 +59,7 @@
                                 </select>
                                 <input class="form-control"
                                     :class="{ 'is-invalid': errors?.valor_pesos ? errors?.valor_pesos.length > 0 : '' }"
-                                    v-model="cantidad" id="cantidadValorUF" placeholder="Ingrese cantidad"
+                                    v-model="propiedad.cantidad" id="cantidadValorUF" placeholder="Ingrese cantidad"
                                     @input="convertir" />
                             </div>
                         </div>
@@ -256,9 +247,6 @@ export default {
     props: {
         tipos_propiedades: Array,
         formatos_negocios: Array,
-        loading_uf: Boolean,
-        input_uf: Boolean,
-        valorUF: Number,
         ubicaciones: Array,
         categorias_secundarias: Array,
         atributos_adicionales: Array
@@ -271,7 +259,6 @@ export default {
     },
     data() {
         return {
-            cantidad: '',
             resultado: 0,
             tipoConversion: "UF a Pesos",
             ciudades: [],
@@ -281,8 +268,10 @@ export default {
                 nombre_tipo_propiedad: '',
                 formato_negocio_id: null,
                 nombre_formato_negocio: '',
+                cantidad: '',
                 valor_pesos: '',
                 tipo_valor: '',
+                valor_uf: '',
                 region: null,
                 nombre_region: '',
                 ciudad: null,
@@ -302,12 +291,6 @@ export default {
             },
             loading: false
         };
-    },
-    watch: {
-        tipoConversion() {
-            this.cantidad = '';
-            this.propiedad.valor_pesos = 0;
-        },
     },
     methods: {
         seleccionarRegion: function (event) {
@@ -338,6 +321,8 @@ export default {
             formData.append('estado_propiedad', this.propiedad.estado_propiedad);
             formData.append('tipo_propiedad_id', this.propiedad.tipo_propiedad_id);
             formData.append('formato_negocio_id', this.propiedad.formato_negocio_id);
+            formData.append('cantidad', this.propiedad.cantidad);
+            formData.append('valor_uf', this.propiedad.valor_uf);
             formData.append('valor_pesos', this.propiedad.valor_pesos);
             formData.append('tipo_valor', this.propiedad.tipo_valor);
             formData.append('ubicacion_id', this.propiedad.ciudad);
@@ -379,8 +364,10 @@ export default {
                 nombre_tipo_propiedad: '',
                 formato_negocio_id: null,
                 nombre_formato_negocio: '',
+                cantidad: '',
                 valor_pesos: '',
                 tipo_valor: '',
+                valor_uf: '',
                 region: null,
                 nombre_region: '',
                 ciudad: null,
@@ -398,7 +385,6 @@ export default {
                 direccion: '',
                 estado_propiedad: null,
             };
-            this.cantidad = '';
             this.resultado = 0;
             this.tipoConversion = "UF a Pesos";
             this.ciudades = [];

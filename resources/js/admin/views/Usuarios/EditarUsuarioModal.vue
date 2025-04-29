@@ -111,6 +111,7 @@ export default {
             this.errors = null;
             const modalElement = document.getElementById('editUsuarioModal');
             const modal = new Modal(modalElement);
+            document.getElementById('editUsuarioImagen').value = null;
             modal.show();
         },
         close() {

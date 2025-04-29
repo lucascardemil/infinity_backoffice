@@ -22,8 +22,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="usuarioCelular" class="form-label">Celular</label>
-                            <input type="celular" class="form-control" id="usuarioCelular" v-model="newUsuario.phone"
-                                :class="errors ? errors.phone ? 'is-invalid' : '' : ''" required>
+                            <input type="text" class="form-control" id="usuarioCelular" v-model="newUsuario.phone"
+                                :class="errors ? errors.phone ? 'is-invalid' : '' : ''" maxlength="9" required>
                         </div>
                         <div class="mb-3">
                             <label for="usuarioImagen" class="form-label">Imagen</label>
@@ -117,6 +117,7 @@ export default {
             this.errors = null;
             this.error_password = null;
             limpiarCampos(this.newUsuario);
+            document.getElementById('usuarioImagen').value = null;
             const modalElement = document.getElementById('crearUsuarioModal');
             const modal = new Modal(modalElement);
             modal.show();

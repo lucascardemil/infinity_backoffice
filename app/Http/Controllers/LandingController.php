@@ -2,12 +2,80 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Propiedad;
+use App\Models\User;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LandingController extends Controller
 {
-    public function index()
+    public function home()
     {
         return view('landing.home');
+    }
+    
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'nombre' => 'required|string|max:255',
+            'user_id' => 'required|integer',
+            'email' => 'required|email|max:255',
+            'telefono' => 'required|string|max:255',
+            'mensaje' => 'required|string|max:255'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 201);
+        }
+
+        $cliente = Cliente::create([
+            'user_id' => $request->user_id,
+            'nombre' => $request->nombre,
+            'email' => $request->email,
+            'telefono' => $request->telefono,
+            'mensaje' => $request->mensaje,
+            'estado' => 0
+        ]);
+
+        return response()->json(['message' => '¡Gracias por contactarnos! Hemos recibido tu información y nos pondremos en contacto contigo a la brevedad por teléfono o correo electrónico.', 'cliente' => $cliente], 201);
+    }
+
+    public function propiedad($titulo = null)
+    {
+        if (!$titulo) {
+            return redirect()->route('landing.home');
+        }
+
+        $tituloSinGuiones = str_replace('-', ' ', $titulo);
+        $propiedad = Propiedad::with('imagenes', 'tipo_propiedad', 'formato_negocio', 'categoria_secundaria', 'ubicacion', 'users.imagenes')
+            ->where('titulo', 'like', '%' . $tituloSinGuiones . '%')
+            ->first();
+
+        if (!$propiedad) {
+            return redirect()->route('landing.home');
+        }
+
+        return view('landing.propiedad', compact('propiedad'));
+    }
+
+    public function propiedades()
+    {
+        $propiedades = Propiedad::with('imagenes', 'tipo_propiedad', 'formato_negocio', 'categoria_secundaria', 'ubicacion', 'users.imagenes')
+            ->where('estado', 'disponible')
+            ->get();
+        return response()->json($propiedades, 200);
+    }
+
+    public function agentes()
+    {
+        $agentes = User::select('id', 'name', 'phone', 'email') // Solo seleccionamos estos campos
+            ->with(['imagenes', 'propiedades']) // Relación con imágenes
+            ->whereHas('roles', function ($query) {
+                $query->where('name', 'agente');
+            })
+            ->get();
+
+        return response()->json($agentes, 200);
     }
 }

@@ -1,6 +1,6 @@
 export default {
     watch: {
-        'propiedad.valorUF': function (val) {
+        'propiedad.propiedad.valor_uf': function (val) {
             if (!val) {
                 this.convertir();
             }
@@ -92,18 +92,18 @@ export default {
             return texto.charAt(0).toUpperCase() + texto.slice(1);
         },
         convertir() {
-            if (!this.cantidad || isNaN(this.cantidad) || !this.valorUF) {
+            if (!this.propiedad.cantidad || isNaN(this.propiedad.cantidad) || !this.propiedad.valor_uf) {
                 this.propiedad.valor_pesos = 0;
-                this.cantidad = '';
+                this.propiedad.cantidad = '';
                 return;
             }
 
             if (this.tipoConversion === "UF a Pesos") {
                 this.propiedad.tipo_valor = "$";
-                this.propiedad.valor_pesos = Math.round(this.cantidad * this.valorUF);
+                this.propiedad.valor_pesos = Math.round(this.propiedad.cantidad * this.propiedad.valor_uf);
             } else {
                 this.propiedad.tipo_valor = "UF";
-                this.propiedad.valor_pesos = Math.round(this.cantidad / this.valorUF);
+                this.propiedad.valor_pesos = Math.round(this.propiedad.cantidad / this.propiedad.valor_uf);
             }
 
             this.propiedad.valor_pesos = this.propiedad.valor_pesos !== '' ? Number(this.propiedad.valor_pesos).toLocaleString('es-CL') : '';

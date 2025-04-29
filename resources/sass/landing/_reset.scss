@@ -1,26 +1,4 @@
-.form-control::placeholder{
-    color: darkgrey !important;
-}
-
-.card{
-    border: 1px solid $label-color !important;
-}
-
-.card-header{
-    background-color: $label-hover !important;
-    border-bottom: 1px solid $label-color !important;
-}
-
-.form-label {
-    color: $label-color;
-}
-
-.form-control,
-.form-check-label,
-.form-select {
-    color: $label-color !important;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-    color: $label-color !important;
+body{
+    font-family: $font-family-base !important;
+    background-color: $label-color !important;
 }

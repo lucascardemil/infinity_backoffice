@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(ImagenUser::class);
     }
+
+    public function propiedades()
+    {
+        return $this->hasMany(Propiedad::class);
+    }
 }

@@ -15,12 +15,16 @@ class CreatePropiedadesTable extends Migration
     {
         Schema::create('propiedades', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('titulo');
             $table->unsignedBigInteger('tipo_propiedad_id');
             $table->foreign('tipo_propiedad_id')->references('id')->on('tipos_propiedades');
             $table->unsignedBigInteger('formato_negocio_id');
             $table->foreign('formato_negocio_id')->references('id')->on('formato_negocios');
+            $table->integer('valor_uf');
+            $table->integer('cantidad');
+            $table->string('tipo_valor');
             $table->integer('valor_pesos');
             $table->unsignedBigInteger('ubicacion_id');
             $table->foreign('ubicacion_id')->references('id')->on('ubicaciones');

@@ -65,30 +65,21 @@
                                                 </select>
                                             </div>
                                             <div class="mb-3">
-                                                <LoadingComponent v-if="loading_uf"></LoadingComponent>
-                                                <h6 class="text-white" v-else-if="!input_uf">
-                                                    Valor UF hoy:
-                                                    <span class="badge rounded-pill bg-warning text-dark">
-                                                        {{
-                                                            valorUF.toLocaleString("es-CL")
-                                                        }}
-                                                    </span> CLP
-                                                </h6>
-                                                <div v-else class="mb-3">
+                                                <div class="mb-3">
                                                     <input class="form-control"
                                                         :class="{ 'is-invalid': errors_editar?.valor_pesos ? errors_editar?.valor_pesos.length > 0 : '' }"
-                                                        v-model="valorUF" placeholder="Valor UF"
-                                                        id="inputEditarPropiedadValorUF" />
+                                                        v-model="editar.valor_uf" placeholder="Valor UF"
+                                                        id="inputEditarPropiedadValorUF" @input="convertir"/>
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <select class="form-select" id="selectValorUF"
                                                         v-model="tipoConversion">
-                                                        <option>UF a Pesos</option>
-                                                        <option>Pesos a UF</option>
+                                                        <option value="$">UF a Pesos</option>
+                                                        <option value="UF">Pesos a UF</option>
                                                     </select>
                                                     <input class="form-control"
                                                         :class="{ 'is-invalid': errors_editar?.valor_pesos ? errors_editar?.valor_pesos.length > 0 : '' }"
-                                                        v-model="cantidad" id="cantidadValorUF"
+                                                        v-model="editar.cantidad" id="cantidadValorUF"
                                                         placeholder="Ingrese cantidad" @input="convertir" />
                                                 </div>
                                             </div>
@@ -302,9 +293,6 @@ export default {
         propiedad_editar: Object,
         tipos_propiedades: Array,
         formatos_negocios: Array,
-        loading_uf: Boolean,
-        input_uf: Boolean,
-        valorUF: Number,
         ubicaciones: Array,
         categorias_secundarias: Array,
         atributos_adicionales: Array,
@@ -328,8 +316,10 @@ export default {
                 nombre_tipo_propiedad: '',
                 formato_negocio_id: null,
                 nombre_formato_negocio: '',
+                cantidad: '',
                 valor_pesos: '',
                 tipo_valor: '',
+                valor_uf: '',
                 region: null,
                 nombre_region: '',
                 ciudad: null,
@@ -374,13 +364,13 @@ export default {
                     this.editar.imagenes = propiedadEditar.imagenes
                     this.editar.direccion = propiedadEditar.direccion
                     this.editar.estado_propiedad = propiedadEditar.estado
+                    this.editar.cantidad = propiedadEditar.cantidad
+                    this.editar.valor_uf = propiedadEditar.valor_uf
+                    this.tipoConversion = propiedadEditar.tipo_valor
                 }
             }
         },
-        tipoConversion() {
-            this.cantidad = '';
-            this.editar.valor_pesos = 0;
-        },
+        
     },
     methods: {
         open() {
@@ -422,6 +412,8 @@ export default {
             formData.append('titulo', this.editar.titulo);
             formData.append('tipo_propiedad_id', this.editar.tipo_propiedad_id);
             formData.append('formato_negocio_id', this.editar.formato_negocio_id);
+            formData.append('cantidad', this.editar.cantidad);
+            formData.append('valor_uf', this.editar.valor_uf);
             formData.append('valor_pesos', this.editar.valor_pesos);
             formData.append('tipo_valor', this.editar.tipo_valor);
             formData.append('ubicacion_id', this.editar.ciudad);
@@ -460,6 +452,6 @@ export default {
         imagenesEliminadas(){
             this.$emit('imagenes-eliminadas-editar');
         }
-    }
+    },
 }
 </script>

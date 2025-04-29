@@ -15,4 +15,9 @@ class TipoPropiedad extends Model
         'nombre',
         'estado',
     ];
+
+    public function propiedades()
+    {
+        return $this->hasMany(Propiedad::class);
+    }
 }

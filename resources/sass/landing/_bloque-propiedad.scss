@@ -1,0 +1,37 @@
+.texto-titulo {
+    color: $label-hover;
+}
+
+.texto-subtitulo {
+    color: $label-hover !important;
+}
+
+.texto-subtitulo-active {
+    background-color: $label-hover !important;
+    color: $label-color !important;
+}
+
+.card-tipo-propiedad {
+    position: relative;
+    margin-top: -50px;
+    padding: var(--bs-card-img-overlay-padding);
+    border-radius: var(--bs-card-inner-border-radius);
+}
+
+.imagen-oscura {
+    filter: brightness(40%);
+}
+
+
+.card-propiedad-home {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-propiedad-home:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.texto-titulo-weight{
+    font-weight: $font-weight-bold;
+}

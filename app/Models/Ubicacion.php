@@ -16,4 +16,9 @@ class Ubicacion extends Model
         'ciudad',
         'estado'
     ];
+
+    public function propiedades()
+    {
+        return $this->hasMany(Propiedad::class);
+    }
 }

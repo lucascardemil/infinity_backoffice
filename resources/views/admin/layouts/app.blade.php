@@ -27,7 +27,7 @@
         <a class="navbar-brand col-md-3 col-lg-2 me-0 text-center" href="#">
             <img src="/images/logo.png" alt="Inversiones Infinity" class="img-dashboard">
         </a>
-        <button class="navbar-toggler d-md-none mx-3 collapsed" type="button" data-bs-toggle="collapse"
+        <button class="navbar-toggler bg-light d-md-none m-3 collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,8 +58,8 @@
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
-                <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
+                <div class="position-sticky mt-3">
+                    <ul class="nav navbar-dv flex-column">
                         @can('propiedad')
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.propiedad.index') ? 'active' : '' }}"
@@ -138,6 +138,15 @@
                                     aria-current="page" href="{{ route('admin.configuraciones.index') }}">
                                     <i class="bi bi-gear-fill"></i>
                                     Configuraciones
+                                </a>
+                            </li>
+                        @endcan
+                        @can('clientes')
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('admin.clientes.index') ? 'active' : '' }}"
+                                    aria-current="page" href="{{ route('admin.clientes.index') }}">
+                                    <i class="bi bi-person-fill-exclamation"></i>
+                                    Clientes
                                 </a>
                             </li>
                         @endcan

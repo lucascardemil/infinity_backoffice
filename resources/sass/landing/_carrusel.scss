@@ -1,12 +1,55 @@
 .carousel-inner {
-    height: 700px;
+    .carousel-item {
+        @media (min-width: 1025px) {
+            margin-top: -200px;
+        }
+
+        .carousel-caption {
+            height: 150px;
+            top: 40%;
+        }
+    }
+
 
     .carousel-item {
-        margin-top: -200px;
+    
+        @media (max-width: 768px) {
+            .carousel-caption {
+                height: auto;
+                top: 10%;
+            }
+        }
 
-        .carousel-caption{
-            height: 150px;
-            top: 45%;
+        @media (max-width: 430px) {
+            .carousel-caption {
+                div {
+                    padding: 10px;
+
+                    .titulo-carrusel {
+                        font-size: 12px; // Cambiado de 50px a 40px
+                    }
+    
+                    .subtitulo-carrusel {
+                        font-size: 10px; // Cambiado de 10px a 8px
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1025px) {
+        height: 700px;
+
+        .carousel-item {
+            .carousel-caption {
+                .titulo-carrusel {
+                    font-size: 50px;
+                }
+
+                .subtitulo-carrusel {
+                    font-size: 30px;
+                }
+            }
         }
     }
 }

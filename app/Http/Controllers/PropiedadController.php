@@ -87,6 +87,9 @@ class PropiedadController extends Controller
             'titulo' => $request->titulo,
             'tipo_propiedad_id' => $request->tipo_propiedad_id,
             'formato_negocio_id' => $request->formato_negocio_id,
+            'valor_uf' => $request->valor_uf,
+            'cantidad' => $request->cantidad,
+            'tipo_valor' => $request->tipo_valor,
             'valor_pesos' => str_replace('.', '', $request->valor_pesos),
             'ubicacion_id' => $request->ubicacion_id,
             'm2_superficie' => $request->m2_superficie,
@@ -149,6 +152,9 @@ class PropiedadController extends Controller
             'titulo' => $request->titulo,
             'tipo_propiedad_id' => $request->tipo_propiedad_id,
             'formato_negocio_id' => $request->formato_negocio_id,
+            'valor_uf' => $request->valor_uf,
+            'cantidad' => $request->cantidad,
+            'tipo_valor' => $request->tipo_valor,
             'valor_pesos' => str_replace('.', '', $request->valor_pesos),
             'ubicacion_id' => $request->ubicacion_id,
             'm2_superficie' => $request->m2_superficie,
@@ -183,18 +189,19 @@ class PropiedadController extends Controller
         return response()->json(['message' => 'La propiedad se actualizo correctamente', 'propiedad' => $propiedad], 201);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $propiedad = Propiedad::findOrFail($id);
         $imagenes = ImagePropiedad::where('propiedad_id', $id)->get();
 
         foreach ($imagenes as $imagen) {
             $nombre_imagen = $this->imageCloudinaryController->getPublicIdFromUrl($imagen->ruta_imagen);
-            $this->imageCloudinaryController->delete('propiedades/' .$nombre_imagen);
+            $this->imageCloudinaryController->delete('propiedades/' . $nombre_imagen);
             $imagen->delete();
         }
 
         $propiedad->delete();
 
-        return response()->json(['message' => 'La propiedad se elimino correctamente'], 200);   
+        return response()->json(['message' => 'La propiedad se elimino correctamente'], 200);
     }
 }

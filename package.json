@@ -27,6 +27,8 @@
     "dependencies": {
         "bootstrap-icons": "^1.11.3",
         "notyf": "^3.10.0",
+        "swiper": "^6.8.4",
+        "swiper-vue2": "^1.0.10",
         "vuedraggable": "^2.24.3",
         "vuejs-datepicker": "^1.6.2"
     }

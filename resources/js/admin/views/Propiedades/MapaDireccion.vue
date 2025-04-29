@@ -31,11 +31,11 @@ export default {
         if (!window.google || !window.google.maps) {
             this.loadGoogleMaps().then(() => {
                 this.initMap();
-                this.initAutocomplete();
+                // this.initAutocomplete();
             });
         } else {
             this.initMap();
-            this.initAutocomplete();
+            // this.initAutocomplete();
         }
     },
 

@@ -31,6 +31,8 @@ Vue.component('tipo_propiedad', require('./views/TiposPropiedades/TipoPropiedad.
 Vue.component('roles', require('./views/Roles/Roles.vue').default);
 Vue.component('usuarios', require('./views/Usuarios/Usuarios.vue').default);
 Vue.component('configuraciones', require('./views/Configuraciones/Configuracion.vue').default);
+Vue.component('clientes', require('./views/Clientes/Cliente.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

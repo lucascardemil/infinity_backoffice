@@ -1,6 +1,6 @@
 export default {
     watch: {
-        'editar.valorUF': function (val) {
+        'editar.editar.valor_uf': function (val) {
             if (!val) {
                 this.convertir();
             }
@@ -94,18 +94,18 @@ export default {
             return texto.charAt(0).toUpperCase() + texto.slice(1);
         },
         convertir() {
-            if (!this.cantidad || isNaN(this.cantidad) || !this.valorUF) {
+            if (!this.editar.cantidad || isNaN(this.editar.cantidad) || !this.editar.valor_uf) {
                 this.editar.valor_pesos = 0;
-                this.cantidad = '';
+                this.editar.cantidad = '';
                 return;
             }
 
             if (this.tipoConversion === "UF a Pesos") {
                 this.editar.tipo_valor = "$";
-                this.editar.valor_pesos = Math.round(this.cantidad * this.valorUF);
+                this.editar.valor_pesos = Math.round(this.editar.cantidad * this.editar.valor_uf);
             } else {
                 this.editar.tipo_valor = "UF";
-                this.editar.valor_pesos = Math.round(this.cantidad / this.valorUF);
+                this.editar.valor_pesos = Math.round(this.editar.cantidad / this.editar.valor_uf);
             }
 
             this.editar.valor_pesos = this.editar.valor_pesos !== '' ? Number(this.editar.valor_pesos).toLocaleString('es-CL') : '';

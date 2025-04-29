@@ -38,7 +38,6 @@ Route::delete('/delete-image', [App\Http\Controllers\ImageCloudinaryController::
 
 Route::group(['middleware' => ['auth', 'permission:configuraciones']], function () {
     Route::get('/admin/configuraciones', [App\Http\Controllers\ConfiguracionController::class, 'index'])->name('admin.configuraciones.index');
-    Route::get('/configuraciones/all', [App\Http\Controllers\ConfiguracionController::class, 'all']);
     Route::post('/configuraciones/store', [App\Http\Controllers\ConfiguracionController::class, 'store']);
 });
 
@@ -56,7 +55,6 @@ Route::group(['middleware' => ['auth', 'permission:propiedad']], function () {
 
 Route::group(['middleware' => ['auth', 'permission:atributo_adicional']], function () {
     Route::get('/admin/atributo_adicional', [App\Http\Controllers\AtributoAdicionalController::class, 'index'])->name('admin.atributo_adicional.index');
-    Route::get('/atributo_adicionales/all-select', [App\Http\Controllers\AtributoAdicionalController::class, 'all_select']);
     Route::get('/atributo_adicionales/all', [App\Http\Controllers\AtributoAdicionalController::class, 'all']);
     Route::post('/atributo_adicionales/store', [App\Http\Controllers\AtributoAdicionalController::class, 'store']);
     Route::post('/atributo_adicionales/update', [App\Http\Controllers\AtributoAdicionalController::class, 'update']);
@@ -66,7 +64,6 @@ Route::group(['middleware' => ['auth', 'permission:atributo_adicional']], functi
 
 Route::group(['middleware' => ['auth', 'permission:categoria_secundaria']], function () {
     Route::get('/admin/categoria_secundaria', [App\Http\Controllers\CategoriaSecundariaController::class, 'index'])->name('admin.categoria_secundaria.index');
-    Route::get('/categoria_secundarias/all-select', [App\Http\Controllers\CategoriaSecundariaController::class, 'all_select']);
     Route::get('/categoria_secundarias/all', [App\Http\Controllers\CategoriaSecundariaController::class, 'all']);
     Route::post('/categoria_secundarias/store', [App\Http\Controllers\CategoriaSecundariaController::class, 'store']);
     Route::put('/categoria_secundarias/update/{id}', [App\Http\Controllers\CategoriaSecundariaController::class, 'update']);
@@ -76,7 +73,6 @@ Route::group(['middleware' => ['auth', 'permission:categoria_secundaria']], func
 
 Route::group(['middleware' => ['auth', 'permission:ubicacion']], function () {
     Route::get('/admin/ubicacion', [App\Http\Controllers\UbicacionController::class, 'index'])->name('admin.ubicacion.index');
-    Route::get('/ubicaciones/all-select', [App\Http\Controllers\UbicacionController::class, 'all_select']);
     Route::get('/ubicaciones/all', [App\Http\Controllers\UbicacionController::class, 'all']);
     Route::post('/ubicaciones/store', [App\Http\Controllers\UbicacionController::class, 'store']);
     Route::put('/ubicaciones/update/{id}', [App\Http\Controllers\UbicacionController::class, 'update']);
@@ -85,7 +81,6 @@ Route::group(['middleware' => ['auth', 'permission:ubicacion']], function () {
 
 Route::group(['middleware' => ['auth', 'permission:tipo_propiedad']], function () {
     Route::get('/admin/tipo_propiedad', [App\Http\Controllers\TipoPropiedadController::class, 'index'])->name('admin.tipo_propiedad.index');
-    Route::get('/tipos_propiedades/all-select', [App\Http\Controllers\TipoPropiedadController::class, 'all_select']);
     Route::get('/tipos_propiedades/all', [App\Http\Controllers\TipoPropiedadController::class, 'all']);
     Route::post('/tipos_propiedades/store', [App\Http\Controllers\TipoPropiedadController::class, 'store']);
     Route::put('/tipos_propiedades/update/{id}', [App\Http\Controllers\TipoPropiedadController::class, 'update']);
@@ -94,7 +89,6 @@ Route::group(['middleware' => ['auth', 'permission:tipo_propiedad']], function (
 
 Route::group(['middleware' => ['auth', 'permission:formato_negocio']], function () {
     Route::get('/admin/formato_negocio', [App\Http\Controllers\FormatoNegocioController::class, 'index'])->name('admin.formato_negocio.index');
-    Route::get('/formato_negocios/all-select', [App\Http\Controllers\FormatoNegocioController::class, 'all_select']);
     Route::get('/formato_negocios/all', [App\Http\Controllers\FormatoNegocioController::class, 'all']);
     Route::post('/formato_negocios/store', [App\Http\Controllers\FormatoNegocioController::class, 'store']);
     Route::put('/formato_negocios/update/{id}', [App\Http\Controllers\FormatoNegocioController::class, 'update']);
@@ -121,9 +115,28 @@ Route::group(['middleware' => ['auth', 'permission:roles']], function () {
     Route::get('/permissions', [App\Http\Controllers\PermissionController::class, 'index']);
 });
 
+Route::group(['middleware' => ['auth', 'permission:clientes']], function () {
+    Route::get('/admin/clientes', [App\Http\Controllers\ClientesController::class, 'index'])->name('admin.clientes.index');
+    Route::get('/clientes/all', [App\Http\Controllers\ClientesController::class, 'all']);
+    Route::put('/clientes/update-status/{id}', [App\Http\Controllers\ClientesController::class, 'update_status']);
+});
 
-Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('landing.home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/tipos_propiedades/all-select', [App\Http\Controllers\TipoPropiedadController::class, 'all_select']);
+    Route::get('/formato_negocios/all-select', [App\Http\Controllers\FormatoNegocioController::class, 'all_select']);
+    Route::get('/ubicaciones/all-select', [App\Http\Controllers\UbicacionController::class, 'all_select']);
+    Route::get('/categoria_secundarias/all-select', [App\Http\Controllers\CategoriaSecundariaController::class, 'all_select']);
+    Route::get('/atributo_adicionales/all-select', [App\Http\Controllers\AtributoAdicionalController::class, 'all_select']);
+});
 
+
+
+Route::get('/', [App\Http\Controllers\LandingController::class, 'home'])->name('landing.home');
+Route::get('/propiedad/{titulo?}', [App\Http\Controllers\LandingController::class, 'propiedad'])->name('landing.propiedad');
+Route::get('/landing/propiedades', [App\Http\Controllers\LandingController::class, 'propiedades']);
+Route::get('/landing/agentes', [App\Http\Controllers\LandingController::class, 'agentes']);
+Route::get('/configuraciones/all', [App\Http\Controllers\ConfiguracionController::class, 'all']);
+Route::post('/clientes/store', [App\Http\Controllers\LandingController::class, 'store']);
 
 
 Route::get('/storage-link', function () {
