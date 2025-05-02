@@ -27,7 +27,7 @@
                                 </h5>
                             </td>
                             <td>
-                                <button v-if="botones.ver" type="button" class="btn btn-secondary" @click="openVerModal(propiedad)">
+                                <button v-if="botones.ver" type="button" class="btn btn-secondary" @click="openVerPropiedad(propiedad)">
                                     <i class="bi bi-eye-fill"></i> Ver
                                 </button>
                                 <button v-if="botones.editar" type="button" class="btn btn-base-dv" @click="openEditModal(propiedad)">
@@ -84,6 +84,16 @@ export default {
         };
     },
     methods: {
+        openVerPropiedad(propiedad) {
+            if (propiedad) {
+            if (propiedad.estado === 'no_disponible') {
+                this.$notyf.error('Debe dejar la propiedad disponible para poder verla.');
+                return;
+            }
+            const url = `/propiedad/${propiedad.titulo.toLowerCase().replace(/\s+/g, '-')}`;
+            window.open(url, '_blank');
+            }
+        },
         openEditModal(propiedad) {
             if (propiedad) {
                 this.selectedPropiedad = { ...propiedad };

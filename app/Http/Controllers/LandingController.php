@@ -56,6 +56,10 @@ class LandingController extends Controller
             return redirect()->route('landing.home');
         }
 
+        if ($propiedad->estado === 'no_disponible') {
+            return redirect()->route('landing.home')->with('error', 'La propiedad no está disponible.');
+        }
+
         return view('landing.propiedad', compact('propiedad'));
     }
 

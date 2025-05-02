@@ -50,7 +50,7 @@
                             <div class="mb-3">
                                 <input class="form-control"
                                     :class="{ 'is-invalid': errors?.valor_pesos ? errors?.valor_pesos.length > 0 : '' }"
-                                    v-model="valorUF" placeholder="Valor UF" id="inputCrearPropiedadValorUF" @input="convertir" />
+                                    v-model="propiedad.valor_uf" placeholder="Valor UF" id="inputCrearPropiedadValorUF" @input="convertir" />
                             </div>
                             <div class="input-group mb-3">
                                 <select class="form-select" id="selectValorUF" v-model="tipoConversion">

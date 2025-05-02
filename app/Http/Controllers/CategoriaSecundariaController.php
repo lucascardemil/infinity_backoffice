@@ -29,7 +29,7 @@ class CategoriaSecundariaController extends Controller
 
     public function all()
     {
-        $categorias_propiedades = CategoriaSecundaria::all()->map(function ($categoria) {
+        $categorias_propiedades = CategoriaSecundaria::where('nombre', '!=', 'Estandar')->get()->map(function ($categoria) {
             $categoria->estado = $categoria->estado == 1 ? true : false;
             return $categoria;
         });

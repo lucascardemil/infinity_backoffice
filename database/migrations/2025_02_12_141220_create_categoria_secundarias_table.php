@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\CategoriaSecundaria;
 
 class CreateCategoriaSecundariasTable extends Migration
 {
@@ -19,6 +20,11 @@ class CreateCategoriaSecundariasTable extends Migration
             $table->integer('estado');
             $table->timestamps();
         });
+
+        CategoriaSecundaria::create([
+            'nombre' => 'Estandar',
+            'estado' => 1,
+        ]);
     }
 
     /**

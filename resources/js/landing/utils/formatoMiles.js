@@ -3,5 +3,5 @@ export function formatoMiles(valor) {
         valor = Number(valor);
         if (isNaN(valor)) return '';
     }
-    return new Intl.NumberFormat('es-ES').format(valor);
+    return valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }

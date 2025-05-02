@@ -4,8 +4,8 @@
             <div class="row align-items-end justify-content-between pb-4">
                 <div class="col-auto">
                     <div class="d-flex gap-2 mb-4">
-                        <!-- <span class="badge bg-success text-white">{{ propiedad.tipo_propiedad.nombre }}</span> -->
-                        <span class="badge bg-danger text-white">{{ propiedad.formato_negocio.nombre }}</span>
+                        <span class="badge bg-success text-white fs-6">{{ propiedad.tipo_propiedad.nombre }}</span>
+                        <span class="badge bg-danger text-white fs-6">{{ propiedad.formato_negocio.nombre }}</span>
                     </div>
                     <h1 class="mb-0">{{ propiedad.titulo }}</h1>
                 </div>

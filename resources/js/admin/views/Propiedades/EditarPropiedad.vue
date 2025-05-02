@@ -69,7 +69,7 @@
                                                     <input class="form-control"
                                                         :class="{ 'is-invalid': errors_editar?.valor_pesos ? errors_editar?.valor_pesos.length > 0 : '' }"
                                                         v-model="editar.valor_uf" placeholder="Valor UF"
-                                                        id="inputEditarPropiedadValorUF" @input="convertir"/>
+                                                        id="inputEditarPropiedadValorUF" @input="convertir" />
                                                 </div>
                                                 <div class="input-group mb-3">
                                                     <select class="form-select" id="selectValorUF"
@@ -127,8 +127,7 @@
                                                     class="form-label">Dirección</label>
                                                 <input type="text" autocomplete="off" class="form-control"
                                                     :class="{ 'is-invalid': errors_editar?.direccion ? errors_editar?.direccion.length > 0 : '' }"
-                                                    id="inputEditarPropiedadDireccion"
-                                                    v-model="editar.direccion"
+                                                    id="inputEditarPropiedadDireccion" v-model="editar.direccion"
                                                     placeholder="Ingrese una dirección" />
                                             </div>
                                             <div class="mb-3">
@@ -238,8 +237,8 @@
                                             <h4 class="text-white mb-0">Imagenes</h4>
                                         </div>
                                         <div class="card-body">
-                                            <ImagenesPropiedad :propiedad="editar"
-                                                :errors_editar="errors_editar" @imagenes-eliminadas="imagenesEliminadas" />
+                                            <ImagenesPropiedad :propiedad="editar" :errors_editar="errors_editar"
+                                                @imagenes-eliminadas="imagenesEliminadas" />
                                         </div>
                                     </div>
                                     <!--Estado Propiedad-->
@@ -367,10 +366,16 @@ export default {
                     this.editar.cantidad = propiedadEditar.cantidad
                     this.editar.valor_uf = propiedadEditar.valor_uf
                     this.tipoConversion = propiedadEditar.tipo_valor
+
+                    if (this.tipoConversion === "UF a Pesos") {
+                        this.editar.tipo_valor = "$";
+                    } else {
+                        this.editar.tipo_valor = "UF";
+                    }
                 }
             }
         },
-        
+
     },
     methods: {
         open() {
@@ -449,7 +454,7 @@ export default {
                 this.close();
             }
         },
-        imagenesEliminadas(){
+        imagenesEliminadas() {
             this.$emit('imagenes-eliminadas-editar');
         }
     },

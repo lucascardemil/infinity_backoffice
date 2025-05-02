@@ -8,6 +8,9 @@
                     <div class="container-imagen-agente-contactar" v-if="propiedad.users.imagenes.length > 0">
                         <img :src="propiedad.users.imagenes[0].ruta_imagen" class="img-agente-miniatura-contactar">
                     </div>
+                    <div class="container-imagen-agente-contactar" v-else>
+                        <img src="/images/agente-defecto.png" class="img-agente-miniatura-contactar">
+                    </div>
                     <ul class="m-0">
                         <li class="d-flex align-items-center">
                             <span class="fs-5">{{ propiedad.users.name }}</span>

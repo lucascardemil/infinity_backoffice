@@ -12,8 +12,11 @@
                 <template v-for="(agente, index) in agentes">
                     <div class="col-lg-3 col-md-12 col-12 d-flex justify-content-center gap-3">
                         <div class="card-agente fade-in mb-4 p-3" :style="{ animationDelay: (index * 0.1) + 's' }">
-                            <div class="mb-3">
+                            <div class="mb-3" v-if="agente.imagenes.length > 0">
                                 <img :src="agente.imagenes[0].ruta_imagen" class="img-fluid rounded-3">
+                            </div>
+                            <div class="mb-3" v-else>
+                                <img src="/images/agente-defecto.png" class="img-fluid rounded-3">
                             </div>
                             <h3 class="mb-3">{{ agente.name }}</h3>
                             <ul class="p-0">

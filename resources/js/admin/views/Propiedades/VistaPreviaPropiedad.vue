@@ -13,7 +13,8 @@
 
             <div class="card-img-overlay">
                 <div class="d-flex gap-2">
-                    <div class="card-tipo-publicacion" v-if="propiedad.nombre_tipo_publicacion !== ''">
+                    <div class="card-tipo-publicacion" v-if="propiedad.nombre_tipo_publicacion !== '' && propiedad.nombre_tipo_publicacion !==
+                        'Estandar'">
                         <h5>
                             <span class="badge bg-success text-white">{{ propiedad.nombre_tipo_publicacion
                                 }}</span>
