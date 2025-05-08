@@ -9,7 +9,7 @@
                         <img :src="propiedad.users.imagenes[0].ruta_imagen" class="img-agente-miniatura-contactar">
                     </div>
                     <div class="container-imagen-agente-contactar" v-else>
-                        <img src="/images/agente-defecto.png" class="img-agente-miniatura-contactar">
+                        <img src="/images/agente-defecto.webp" class="img-agente-miniatura-contactar">
                     </div>
                     <ul class="m-0">
                         <li class="d-flex align-items-center">
@@ -73,7 +73,9 @@ export default {
                 nombre: '',
                 email: '',
                 telefono: '',
-                mensaje: ''
+                mensaje: '',
+                url_propiedad: window.location.href,
+                titulo_propiedad: this.propiedad.titulo,
             },
         }
     },

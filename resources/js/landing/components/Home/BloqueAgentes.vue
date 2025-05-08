@@ -16,7 +16,7 @@
                                 <img :src="agente.imagenes[0].ruta_imagen" class="img-fluid rounded-3">
                             </div>
                             <div class="mb-3" v-else>
-                                <img src="/images/agente-defecto.png" class="img-fluid rounded-3">
+                                <img src="/images/agente-defecto.webp" class="img-fluid rounded-3">
                             </div>
                             <h3 class="mb-3">{{ agente.name }}</h3>
                             <ul class="p-0">

@@ -9,6 +9,7 @@ export default {
             loading_propiedades: false,
             loading_crear_propiedad: false,
             loading_editar_propiedad: false,
+            loading_subir_imagen: false,
             loading_eliminar_imagen: false,
             loading_eliminar_propiedad: false,
             errors: null,

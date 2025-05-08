@@ -26,7 +26,7 @@ class ImageCloudinaryController extends Controller
     public function upload(Request $request, $carpeta)
     {
         $request->validate([
-            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $imagePath = $request->file('imagen')->getRealPath();

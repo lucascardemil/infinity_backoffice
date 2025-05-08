@@ -36,8 +36,8 @@
 
         <template v-else v-for="(imagen, index) in imagenes_propiedades">
             <div class="container-imagen">
-                <img :src="imagen.ruta_imagen" class="imagen-propiedad" alt="Imagen de propiedad" />
-            </div>
+                <img :src="imagen.ruta_imagen || '../images/propiedad-defecto-detalle.webp'" class="imagen-propiedad" alt="Imagen de propiedad" @error="imagen.ruta_imagen = '../images/propiedad-defecto-detalle.webp'" />
+            </div>             
         </template>
     </div>
 </template>

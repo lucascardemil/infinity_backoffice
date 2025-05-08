@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                     <template v-if="categorias_secundarias.length">
-                        <tr v-for="(categoria_secundaria, index) in categorias_secundarias"
+                        <tr v-for="(categoria_secundaria, index) in ListaCategoriasSecundarias"
                             :key="categoria_secundaria.id">
                             <th scope="row">{{ index + 1 }}</th>
                             <td>{{ categoria_secundaria.nombre }}</td>
@@ -55,20 +55,34 @@ import categoriasSecundariasMixin from '../../mixins/categoria_secundaria/catego
 import CrearCategoriaSecundariaModal from './CrearCategoriaSecundariaModal.vue';
 import EditarCategoriaSecundariaModal from './EditarCategoriaSecundariaModal.vue';
 import LoadingComponent from '../../components/LoadingComponent.vue';
+import PaginacionComponent from '../../components/PaginacionComponent.vue';
 
 export default {
     mixins: [categoriasSecundariasMixin],
     components: {
         CrearCategoriaSecundariaModal,
         EditarCategoriaSecundariaModal,
-        LoadingComponent
+        LoadingComponent,
+        PaginacionComponent
     },
     data() {
         return {
             selectedCategoriaSecundaria: null,
             checkbox: [],
-            cantidad_categorias_secundarias: []
+            cantidad_categorias_secundarias: [],
+            paginaActual: 1,
+            filasPorPagina: 10,
         };
+    },
+    computed: {
+        totalPaginas() {
+            return Math.ceil(this.categorias_secundarias.length / this.filasPorPagina);
+        },
+        ListaCategoriasSecundarias() {
+            const start = (this.paginaActual - 1) * this.filasPorPagina;
+            const end = start + this.filasPorPagina;
+            return this.categorias_secundarias.slice(start, end);
+        }
     },
     watch: {
         categorias_secundarias: function () {
@@ -124,7 +138,13 @@ export default {
                     this.cantidad_categorias_secundarias.splice(index, 1);
                 }
             }
-        }
+        },
+        cambiarPaginaActual(newPage) {
+            this.paginaActual = newPage;
+        },
+        cambiarPagina(newPage) {
+            this.paginaActual = newPage;
+        },
 
     },
     created() {

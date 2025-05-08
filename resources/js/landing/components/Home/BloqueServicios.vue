@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 gap-3">
                     <div class="mb-4">
-                        <img src="/images/apreton-de-manos.png" width="80" height="80">
+                        <img src="/images/apreton-de-manos.webp" width="80" height="80">
                     </div>
                     <h3 class="texto-titulo">Arrendamos tu propiedad</h3>
                     <p class="text-muted fs-5">Arrendamos tu propiedad al arrendatario ideal, firmas tus contratos de
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 ">
                     <div class="mb-4">
-                        <img src="/images/comprar-casa.png" width="80" height="80">
+                        <img src="/images/comprar-casa.webp" width="80" height="80">
                     </div>
                     <h3 class="texto-titulo">Vendemos tu propiedad</h3>
                     <p class="text-muted fs-5">Ofrecemos tu propiedad, tanto a personas que buscan su primer hogar, como
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="mb-4">
-                        <img src="/images/propiedad-administrativa.png" width="80" height="80">
+                        <img src="/images/propiedad-administrativa.webp" width="80" height="80">
                     </div>
                     <h3 class="texto-titulo">Arrendamos tu propiedad</h3>
                     <p class="text-muted fs-5">Arrendamos tu propiedad al arrendatario ideal, firmas tus contratos de

@@ -1,12 +1,12 @@
 <template>
-    <div class="w-75">
+    <div class="crear-propiedad-container">
         <div class="d-flex justify-content-center align-items-center flex-column cargando-propiedad-creada"
             v-if="loading_crear_propiedad">
             <img src="/images/cargando_home.gif">
             <h3 class="texto-cargando-propiedad">Creando Propiedad...</h3>
         </div>
         <div v-else class="row mb-5">
-            <div class="col">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <!--Formulario-->
                 <div class="card mb-3">
                     <div class="card-body">
@@ -50,7 +50,8 @@
                             <div class="mb-3">
                                 <input class="form-control"
                                     :class="{ 'is-invalid': errors?.valor_pesos ? errors?.valor_pesos.length > 0 : '' }"
-                                    v-model="propiedad.valor_uf" placeholder="Valor UF" id="inputCrearPropiedadValorUF" @input="convertir" />
+                                    v-model="propiedad.valor_uf" placeholder="Valor UF" id="inputCrearPropiedadValorUF"
+                                    @input="convertir" />
                             </div>
                             <div class="input-group mb-3">
                                 <select class="form-select" id="selectValorUF" v-model="tipoConversion">
@@ -223,7 +224,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <VistaPreviaPropiedad :propiedad="propiedad" :errors="errors" />
             </div>
 
@@ -395,3 +396,19 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.crear-propiedad-container {
+    width: 75%;
+}
+
+@media (max-width: 768px) {
+    .crear-propiedad-container {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column-reverse;
+    }
+}
+</style>

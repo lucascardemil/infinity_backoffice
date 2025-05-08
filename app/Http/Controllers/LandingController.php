@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class LandingController extends Controller
 {
@@ -22,7 +24,7 @@ class LandingController extends Controller
             'user_id' => 'required|integer',
             'email' => 'required|email|max:255',
             'telefono' => 'required|string|max:255',
-            'mensaje' => 'required|string|max:255'
+            'mensaje' => 'required|string'
         ]);
 
         if ($validator->fails()) {
@@ -37,6 +39,18 @@ class LandingController extends Controller
             'mensaje' => $request->mensaje,
             'estado' => 0
         ]);
+
+        $contenido = "Nombre: {$cliente['nombre']}\nEmail: {$cliente['email']}\nTeléfono: {$cliente['telefono']}\nMensaje: {$cliente['mensaje']}\nURL Propiedad: {$request->url_propiedad}\nTítulo Propiedad: {$request->titulo_propiedad}";
+
+        try {
+            Mail::raw($contenido, function ($message) {
+            $message->to('contacto@inversionesinfinity.cl')
+                ->subject('Nuevo mensaje desde el formulario de contacto');
+            });
+        } catch (\Exception $e) {
+            // Log the error for debugging purposes
+            Log::error('Error al enviar el correo: ' . $e->getMessage());
+        }
 
         return response()->json(['message' => '¡Gracias por contactarnos! Hemos recibido tu información y nos pondremos en contacto contigo a la brevedad por teléfono o correo electrónico.', 'cliente' => $cliente], 201);
     }

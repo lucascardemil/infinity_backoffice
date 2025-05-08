@@ -33,7 +33,9 @@ export default {
                     nombre: data.nombre,
                     email: data.email,
                     telefono: data.telefono,
-                    mensaje: data.mensaje
+                    mensaje: data.mensaje,
+                    url_propiedad: data.url_propiedad,
+                    titulo_propiedad: data.titulo_propiedad,
                 });
         
                 // Verifica si la respuesta tiene errores de validación

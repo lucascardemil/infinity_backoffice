@@ -1,7 +1,4 @@
 <template>
-    <!-- <div class="row py-5">
-        
-    </div> -->
     <div class="row align-items-center" v-if="propiedades_filtradas.length > 0">
         <div class="col-12 py-5">
             <p class="texto-titulo">PROPIEDADES DESTACADAS</p>
@@ -27,7 +24,7 @@
                         spaceBetween: 0,
                     },
                     '1024': {
-                        slidesPerView: propiedades_filtradas.length,
+                        slidesPerView: propiedades_filtradas.length > 3 ? 3 : propiedades_filtradas.length === 1 ? 3 : propiedades_filtradas.length,
                         spaceBetween: 20,
                     },
                 }">

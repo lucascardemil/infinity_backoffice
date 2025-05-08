@@ -28,7 +28,7 @@
                 <main class="form-signin">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <img class="img-login mb-4" src="/images/logo.png" alt="Inversiones Infinity">
+                        <img class="img-login mb-4" src="/images/logo.webp" alt="Inversiones Infinity">
                         <div class="form-floating">
                             <input id="email" type="email"
                                 class="form-control @error('email') is-invalid @enderror" name="email"

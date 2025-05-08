@@ -20,7 +20,7 @@
                 <tbody>
                     <template v-if="clientes.length">
                         <tr v-for="(cliente, index) in ListaClientes" :key="cliente.id">
-                            <th scope="row">{{ index + 1 }}</th>
+                            <th scope="row">{{ (paginaActual - 1) * filasPorPagina + index + 1 }}</th>
                             <td>{{ cliente.nombre }}</td>
                             <td>{{ cliente.email }}</td>
                             <td>{{ cliente.telefono }}</td>
@@ -66,7 +66,7 @@ export default {
     data() {
         return {
             paginaActual: 1,
-            filasPorPagina: 3,
+            filasPorPagina: 10,
         };
     },
     computed: {

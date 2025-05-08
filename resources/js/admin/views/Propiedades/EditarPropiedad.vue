@@ -17,8 +17,8 @@
                                 <img src="/images/cargando_home.gif">
                                 <h3 class="texto-cargando-propiedad">Editar Propiedad...</h3>
                             </div>
-                            <div v-else class="row">
-                                <div class="col">
+                            <div v-else class="row editar-propiedad-container">
+                                <div class="col-lg-6 col-md-12 col-sm-12">
                                     <!--Formulario-->
                                     <div class="card mb-3">
                                         <div class="card-body">
@@ -265,7 +265,7 @@
                                         <i class="bi bi-plus-circle"></i> Editar Propiedad
                                     </button>
                                 </div>
-                                <div class="col">
+                                <div class="col-lg-6 col-md-12 col-sm-12">
                                     <VistaPreviaPropiedad :propiedad="editar" :errors_editar="errors_editar" />
                                 </div>
                             </div>
@@ -460,3 +460,10 @@ export default {
     },
 }
 </script>
+<style scoped>
+@media (max-width: 768px) {
+    .editar-propiedad-container {
+        flex-direction: column-reverse;
+    }
+}
+</style>

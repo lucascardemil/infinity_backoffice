@@ -64,12 +64,12 @@ export default {
     data() {
         return {
             images: [
-                '/images/colaborador1.jpeg',
-                '/images/colaborador1.jpeg',
-                '/images/colaborador1.jpeg',
-                '/images/colaborador1.jpeg',
-                '/images/colaborador1.jpeg',
-                '/images/colaborador1.jpeg',
+                '/images/colaborador1.webp',
+                '/images/colaborador1.webp',
+                '/images/colaborador1.webp',
+                '/images/colaborador1.webp',
+                '/images/colaborador1.webp',
+                '/images/colaborador1.webp',
             ],
             slidesPerView: 2,
             spaceBetween: 20

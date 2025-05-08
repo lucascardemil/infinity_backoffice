@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
-                    <img src="/images/logo.png" alt="Inversiones Infinity" class="img-dashboard">
+                    <img src="/images/logo.webp" alt="Inversiones Infinity" class="img-dashboard">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col-lg-4 col-md-12">
                     <a href="/" class="d-flex mb-3 link-dark text-decoration-none">
-                        <img src="/images/logo.png" alt="Inversiones Infinity" width="200">
+                        <img src="/images/logo.webp" alt="Inversiones Infinity" width="200">
                     </a>
                     <p class="text-white">
                         Somos una empresa de gestión y asesoría inmobiliaria con sede en la ciudad de La Serena. Equipo

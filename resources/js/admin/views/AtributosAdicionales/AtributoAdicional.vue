@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                     <template v-if="atributos_adicionales.length">
-                        <tr v-for="(atributo_adicional, index) in atributos_adicionales" :key="atributo_adicional.id">
+                        <tr v-for="(atributo_adicional, index) in ListaAtributosAdicionales" :key="atributo_adicional.id">
                             <th scope="row">{{ index + 1 }}</th>
                             <td>{{ atributo_adicional.nombre }}</td>
                             <td>
@@ -47,6 +47,9 @@
         </div>
         <CrearAtributoAdicionalModal ref="crearAtributoAdicionalModal" @atributo-adicional-updated="fetchAtributosAdicionales" />
         <EditarAtributoAdicionalModal ref="editarAtributoAdicionalModal" :atributo_adicional="selectedAtributoAdicional" @atributo-adicional-updated="fetchAtributosAdicionales" />
+
+        <PaginacionComponent :paginaActual="paginaActual" :totalPaginas="totalPaginas" @cambiar-pagina="cambiarPagina"
+            @cambiar-pagina-actual="cambiarPaginaActual" />
     </div>
 </template>
 
@@ -55,19 +58,33 @@ import atributosAdicionalesMixin from '../../mixins/atributo_adicional/atributos
 import CrearAtributoAdicionalModal from './CrearAtributoAdicionalModal.vue';
 import EditarAtributoAdicionalModal from './EditarAtributoAdicionalModal.vue';
 import LoadingComponent from '../../components/LoadingComponent.vue';
+import PaginacionComponent from '../../components/PaginacionComponent.vue';
 
 export default {
     mixins: [atributosAdicionalesMixin],
     components: {
         CrearAtributoAdicionalModal,
         EditarAtributoAdicionalModal,
-        LoadingComponent
+        LoadingComponent,
+        PaginacionComponent
     },
     data() {
         return {
             selectedAtributoAdicional: null,
             checkbox: [],
+            paginaActual: 1,
+            filasPorPagina: 10,
         };
+    },
+    computed: {
+        totalPaginas() {
+            return Math.ceil(this.atributos_adicionales.length / this.filasPorPagina);
+        },
+        ListaAtributosAdicionales() {
+            const start = (this.paginaActual - 1) * this.filasPorPagina;
+            const end = start + this.filasPorPagina;
+            return this.atributos_adicionales.slice(start, end);
+        }
     },
     methods: {
         openCrearModal() {
@@ -91,8 +108,13 @@ export default {
             } catch (error) {
                 console.error('Error actualizando el estado:', error);
             }
-        }
-
+        },
+        cambiarPaginaActual(newPage) {
+            this.paginaActual = newPage;
+        },
+        cambiarPagina(newPage) {
+            this.paginaActual = newPage;
+        },
     },
     created() {
         this.fetchAtributosAdicionales();

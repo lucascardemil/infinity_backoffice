@@ -1,27 +1,29 @@
 <template>
     <div>
-        <div class="d-flex justify-content-between mb-3">
-            <h3 class="text-white" v-if="activeTab === 'crear'">Crear Propiedad</h3>
-            <h3 class="text-white" v-else-if="activeTab === 'administrar'">Administrar Propiedades</h3>
-            <div>
-                <button type="button" class="btn btn-base-dv" v-if="activeTab === 'crear'"
-                    @click.prevent="activeTab = 'administrar'">
-                    <i class="bi bi-arrow-left"></i> Administrar Propiedades
-                </button>
-                <button type="button" class="btn btn-base-dv" v-if="activeTab === 'administrar'"
-                    @click.prevent="activeTab = 'crear'">
-                    <i class="bi bi-plus-circle"></i> Crear Propiedad
-                </button>
+        <div class="row justify-content-between mb-3">
+            <div class="col-lg-10 col-md-12">
+                <h3 class="text-white mb-3" v-if="activeTab === 'crear'">Crear Propiedad</h3>
+                <h3 class="text-white mb-3" v-else-if="activeTab === 'administrar'">Administrar Propiedades</h3>
+            </div>
+            <div class="col-lg-2 col-md-12">
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-base-dv" v-if="activeTab === 'crear'"
+                        @click.prevent="activeTab = 'administrar'">
+                        <i class="bi bi-arrow-left"></i> Administrar Propiedades
+                    </button>
+                    <button type="button" class="btn btn-base-dv" v-if="activeTab === 'administrar'"
+                        @click.prevent="activeTab = 'crear'">
+                        <i class="bi bi-plus-circle"></i> Crear Propiedad
+                    </button>
+                </div>
             </div>
         </div>
 
         <div v-if="activeTab === 'crear'">
-            <CrearPropiedad v-bind="sharedProps" 
-                @crear-propiedad="volverAdministracionPropiedad"/>
+            <CrearPropiedad v-bind="sharedProps" @crear-propiedad="volverAdministracionPropiedad" />
         </div>
         <div v-else-if="activeTab === 'administrar'">
-            <AdministracionPropiedad v-bind="sharedProps" 
-                @imagenes-eliminadas-administracion="fetchAllPropiedades" 
+            <AdministracionPropiedad v-bind="sharedProps" @imagenes-eliminadas-administracion="fetchAllPropiedades"
                 @eliminar-propiedad-administracion="fetchAllPropiedades" />
         </div>
     </div>

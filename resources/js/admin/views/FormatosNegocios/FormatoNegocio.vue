@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                     <template v-if="formatos_negocios.length">
-                        <tr v-for="(formato_negocio, index) in formatos_negocios" :key="formato_negocio.id">
+                        <tr v-for="(formato_negocio, index) in ListaFormatosNegocios" :key="formato_negocio.id">
                             <th scope="row">{{ index + 1 }}</th>
                             <td>{{ formato_negocio.nombre }}</td>
                             <td>
@@ -41,6 +41,9 @@
         </div>
         <CrearFormatoNegocioModal ref="crearFormatoNegocioModal" @formato-negocio-updated="fetchFormatosNegocios" />
         <EditarFormatoNegocioModal ref="editarFormatoNegocioModal" :formato_negocio="selectedFormatoNegocio" @formato-negocio-updated="fetchFormatosNegocios" />
+
+        <PaginacionComponent :paginaActual="paginaActual" :totalPaginas="totalPaginas" @cambiar-pagina="cambiarPagina"
+            @cambiar-pagina-actual="cambiarPaginaActual" />
     </div>
 </template>
 
@@ -49,19 +52,33 @@ import formatosNegociosMixin from '../../mixins/formato_negocio/formatosNegocios
 import CrearFormatoNegocioModal from './CrearFormatoNegocioModal.vue';
 import EditarFormatoNegocioModal from './EditarFormatoNegocioModal.vue';
 import LoadingComponent from '../../components/LoadingComponent.vue';
+import PaginacionComponent from '../../components/PaginacionComponent.vue';
 
 export default {
     mixins: [formatosNegociosMixin],
     components: {
         CrearFormatoNegocioModal,
         EditarFormatoNegocioModal,
-        LoadingComponent
+        LoadingComponent,
+        PaginacionComponent
     },
     data() {
         return {
             selectedFormatoNegocio: null,
-            checkbox: []
+            checkbox: [],
+            paginaActual: 1,
+            filasPorPagina: 10,
         };
+    },
+    computed: {
+        totalPaginas() {
+            return Math.ceil(this.formatos_negocios.length / this.filasPorPagina);
+        },
+        ListaFormatosNegocios() {
+            const start = (this.paginaActual - 1) * this.filasPorPagina;
+            const end = start + this.filasPorPagina;
+            return this.formatos_negocios.slice(start, end);
+        }
     },
     methods: {
         openCrearModal() {
@@ -86,7 +103,13 @@ export default {
             } catch (error) {
                 console.error('Error actualizando el estado:', error);
             }
-        }
+        },
+        cambiarPaginaActual(newPage) {
+            this.paginaActual = newPage;
+        },
+        cambiarPagina(newPage) {
+            this.paginaActual = newPage;
+        },
 
     },
     created() {

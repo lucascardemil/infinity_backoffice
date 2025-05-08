@@ -6,7 +6,7 @@
 
         <LoadingComponent v-if="loading" />
         <div v-else>
-            <div class="col-5 mb-5">
+            <div class="col-5 mb-3">
                 <h5 class="text-white">Google Maps API</h5>
                 <input type="text" class="form-control" id="configuracion_google_maps_api" placeholder="Pega API KEY"
                     v-model="configuraciones.google_maps_api" required>
