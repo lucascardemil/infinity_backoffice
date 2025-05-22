@@ -37,6 +37,7 @@ class LandingController extends Controller
             'email' => $request->email,
             'telefono' => $request->telefono,
             'mensaje' => $request->mensaje,
+            'propiedad' => $request->url_propiedad,
             'estado' => 0
         ]);
 

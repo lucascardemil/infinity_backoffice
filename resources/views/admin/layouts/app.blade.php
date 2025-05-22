@@ -25,7 +25,7 @@
     <header class="navbar navbar-dv sticky-top d-flex py-0 shadow">
 
         <a class="navbar-brand col-md-3 col-lg-2 me-0 text-center" href="#">
-            <img src="/images/logo.webp" alt="Inversiones Infinity" class="img-dashboard">
+            <img src="../images/logo.webp" alt="Inversiones Infinity" class="img-dashboard">
         </a>
         <button class="navbar-toggler bg-light d-md-none m-3 collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,6 +147,15 @@
                                     aria-current="page" href="{{ route('admin.clientes.index') }}">
                                     <i class="bi bi-person-fill-exclamation"></i>
                                     Clientes
+                                </a>
+                            </li>
+                        @endcan
+                        @can('uf')
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('admin.uf.index') ? 'active' : '' }}"
+                                    aria-current="page" href="{{ route('admin.uf.index') }}">
+                                    <i class="bi bi-currency-dollar"></i>
+                                    UF
                                 </a>
                             </li>
                         @endcan

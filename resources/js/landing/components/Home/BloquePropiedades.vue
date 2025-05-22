@@ -1,5 +1,5 @@
 <template>
-    <div class="container pt-5">
+    <div class="container pt-5 pb-5">
         <div class="row justify-content-center pb-5">
             <div class="col-auto">
                 <p class="text-center texto-titulo">PROPIEDADES</p>
@@ -23,11 +23,21 @@
         </ul>
 
         <div class="row">
-            <div class="col-lg-4 col-md-12" v-for="propiedad in obtenerPropiedadesPorTipo">
+            <div
+                class="col-lg-4 col-md-12"
+                v-for="(propiedad, idx) in obtenerPropiedadesPorTipo.slice(0, propiedadesMostradas)"
+                :key="propiedad.id"
+            >
                 <CardPropiedades :propiedad="propiedad"></CardPropiedades>
             </div>
         </div>
-
+        <div class="row" v-if="obtenerPropiedadesPorTipo.length > propiedadesMostradas">
+            <div class="col-12 text-center mt-3">
+                <button class="btn btn-base-dv" @click="verMasPropiedades">
+                    Ver más propiedades
+                </button>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -41,7 +51,6 @@ export default {
             required: true,
         },
     },
-    mixins: [],
     components: {
         CardPropiedades
     },
@@ -50,6 +59,7 @@ export default {
             tipos_propiedades: [],
             obtenerPropiedadesPorTipo: [],
             marcarBotonActivo: null,
+            propiedadesMostradas: 3, // Mostrar solo 3 al inicio
         };
     },
     watch: {
@@ -59,11 +69,9 @@ export default {
                 if (!propiedades || propiedades.length === 0) {
                     return;
                 }
-
                 propiedades.forEach(propiedad => {
                     propiedad.valor_pesos = formatoMiles(propiedad.valor_pesos);
                 });
-
                 this.obtenerTipoPropiedades(propiedades);
                 this.mostrarTodasPropiedades();
             },
@@ -82,15 +90,21 @@ export default {
 
         mostrarTodasPropiedades() {
             this.marcarBotonActivo = 0;
-            this.obtenerPropiedadesPorTipo = this.propiedades
+            this.obtenerPropiedadesPorTipo = this.propiedades;
+            this.propiedadesMostradas = 3; // Reinicia el contador al cambiar filtro
         },
 
         mostrarPorTipoPropiedad(id) {
             this.marcarBotonActivo = id;
-            this.obtenerPropiedadesPorTipo = this.propiedades.filter(propiedad => propiedad.tipo_propiedad.id === id);
+            this.obtenerPropiedadesPorTipo = this.propiedades.filter(
+                propiedad => propiedad.tipo_propiedad.id === id
+            );
+            this.propiedadesMostradas = 3; // Reinicia el contador al cambiar filtro
+        },
+
+        verMasPropiedades() {
+            this.propiedadesMostradas += 3;
         }
-
-
     }
 }
 </script>

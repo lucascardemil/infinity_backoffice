@@ -47,26 +47,44 @@ class LoginController extends Controller
     public function getUserRole()
     {
         $user = auth()->user();
+
+        if (!$user) {
+            return response()->json(['message' => 'Unauthenticated'], 401);
+        }
+
         return response()->json(['name' => $user->name]);
     }
+
 
     public function getAuthenticatedUser()
     {
         $user = auth()->user();
+
+        if (!$user) {
+            return response()->json(['message' => 'Unauthenticated'], 401);
+        }
+
         return response()->json($user);
     }
+
 
 
     public function getRoleUser()
     {
-        $userAutenticado = auth()->user();
-        $user = (object) [
-            'id' => $userAutenticado->id,
-            'role' => $userAutenticado->roles[0]->name
+        $user = auth()->user();
+
+        if (!$user || $user->roles->isEmpty()) {
+            return response()->json(['message' => 'Unauthorized or no roles'], 401);
+        }
+
+        $response = [
+            'id' => $user->id,
+            'role' => $user->roles[0]->name
         ];
 
-        return response()->json($user);
+        return response()->json($response);
     }
+
 
 
     public function logout(Request $request)

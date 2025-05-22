@@ -27,9 +27,9 @@ class ClientesController extends Controller
 
     public function all()
     {
-        $user = $this->loginController->getRoleUser();
-        $userId = $user->original->id ?? null;
-        $userRole = $user->original->role ?? null;
+        $user = auth()->user(); // Obtener al usuario autenticado
+        $userId = $user->id ?? null;
+        $userRole = $user->roles->first()->name ?? null; // Obtener el nombre del rol del usuario
 
         if (!in_array($userRole, ['administrador', 'agente'])) {
             return response()->json(['message' => 'No tiene permisos para acceder a esta información'], 403);

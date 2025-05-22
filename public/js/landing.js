@@ -5064,6 +5064,23 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=script&lang=js":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=script&lang=js ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['propiedad']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue?vue&type=script&lang=js":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue?vue&type=script&lang=js ***!
@@ -5092,7 +5109,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         nombre: '',
         email: '',
         telefono: '',
-        mensaje: ''
+        mensaje: '',
+        url_propiedad: window.location.href,
+        titulo_propiedad: this.propiedad.titulo
       }
     };
   },
@@ -5253,25 +5272,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/navigation/navigation.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/pagination/pagination.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/autoplay/autoplay.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/navigation/navigation.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/pagination/pagination.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/autoplay/autoplay.js");
 /* harmony import */ var swiper_vue2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper-vue2 */ "./node_modules/swiper-vue2/dist/swiper-vue2.umd.min.js");
 /* harmony import */ var swiper_vue2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_vue2__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utils_formatoMiles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/formatoMiles */ "./resources/js/landing/utils/formatoMiles.js");
-/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/swiper-bundle.css */ "./node_modules/swiper/swiper-bundle.css");
+/* harmony import */ var _CardPropiedades_CardPropiedades_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../CardPropiedades/CardPropiedades.vue */ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue");
+/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/swiper-bundle.css */ "./node_modules/swiper/swiper-bundle.css");
+
 
 
 
 
 // Import Swiper styles
 
-swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperCore.use([swiper__WEBPACK_IMPORTED_MODULE_3__["default"], swiper__WEBPACK_IMPORTED_MODULE_4__["default"], swiper__WEBPACK_IMPORTED_MODULE_5__["default"]]);
+swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperCore.use([swiper__WEBPACK_IMPORTED_MODULE_4__["default"], swiper__WEBPACK_IMPORTED_MODULE_5__["default"], swiper__WEBPACK_IMPORTED_MODULE_6__["default"]]);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['propiedades_destacadas', 'propiedad_seleccionada'],
   components: {
     Swiper: swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.Swiper,
-    SwiperSlide: swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperSlide
+    SwiperSlide: swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperSlide,
+    CardPropiedades: _CardPropiedades_CardPropiedades_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -5452,7 +5474,7 @@ swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperCore.use([swiper__WEBPACK_IMPORTE
   },
   data: function data() {
     return {
-      images: ['/images/colaborador1.jpeg', '/images/colaborador1.jpeg', '/images/colaborador1.jpeg', '/images/colaborador1.jpeg', '/images/colaborador1.jpeg', '/images/colaborador1.jpeg'],
+      images: ['/images/colaborador1.webp', '/images/colaborador1.webp', '/images/colaborador1.webp', '/images/colaborador1.webp', '/images/colaborador1.webp', '/images/colaborador1.webp'],
       slidesPerView: 2,
       spaceBetween: 20
     };
@@ -5472,7 +5494,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _utils_formatoMiles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../utils/formatoMiles */ "./resources/js/landing/utils/formatoMiles.js");
+/* harmony import */ var _CardPropiedades_CardPropiedades_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../CardPropiedades/CardPropiedades.vue */ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue");
+/* harmony import */ var _utils_formatoMiles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/formatoMiles */ "./resources/js/landing/utils/formatoMiles.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -5481,13 +5505,15 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
-  mixins: [],
-  components: {},
+  components: {
+    CardPropiedades: _CardPropiedades_CardPropiedades_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       tipos_propiedades: [],
       obtenerPropiedadesPorTipo: [],
-      marcarBotonActivo: null
+      marcarBotonActivo: null,
+      propiedadesMostradas: 3 // Mostrar solo 3 al inicio
     };
   },
   watch: {
@@ -5498,7 +5524,7 @@ __webpack_require__.r(__webpack_exports__);
           return;
         }
         propiedades.forEach(function (propiedad) {
-          propiedad.valor_pesos = (0,_utils_formatoMiles__WEBPACK_IMPORTED_MODULE_0__.formatoMiles)(propiedad.valor_pesos);
+          propiedad.valor_pesos = (0,_utils_formatoMiles__WEBPACK_IMPORTED_MODULE_1__.formatoMiles)(propiedad.valor_pesos);
         });
         this.obtenerTipoPropiedades(propiedades);
         this.mostrarTodasPropiedades();
@@ -5520,12 +5546,17 @@ __webpack_require__.r(__webpack_exports__);
     mostrarTodasPropiedades: function mostrarTodasPropiedades() {
       this.marcarBotonActivo = 0;
       this.obtenerPropiedadesPorTipo = this.propiedades;
+      this.propiedadesMostradas = 3; // Reinicia el contador al cambiar filtro
     },
     mostrarPorTipoPropiedad: function mostrarPorTipoPropiedad(id) {
       this.marcarBotonActivo = id;
       this.obtenerPropiedadesPorTipo = this.propiedades.filter(function (propiedad) {
         return propiedad.tipo_propiedad.id === id;
       });
+      this.propiedadesMostradas = 3; // Reinicia el contador al cambiar filtro
+    },
+    verMasPropiedades: function verMasPropiedades() {
+      this.propiedadesMostradas += 3;
     }
   }
 });
@@ -5543,13 +5574,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _mixins_propiedades_servicesPropiedades__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/propiedades/servicesPropiedades */ "./resources/js/landing/mixins/propiedades/servicesPropiedades.js");
-/* harmony import */ var _mixins_agentes_servicesAgentes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mixins/agentes/servicesAgentes */ "./resources/js/landing/mixins/agentes/servicesAgentes.js");
-/* harmony import */ var _components_Home_BloqueAgentes_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home/BloqueAgentes.vue */ "./resources/js/landing/components/Home/BloqueAgentes.vue");
-/* harmony import */ var _components_Home_BloquePropiedades_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/BloquePropiedades.vue */ "./resources/js/landing/components/Home/BloquePropiedades.vue");
-/* harmony import */ var _components_Home_BloqueServicios_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Home/BloqueServicios.vue */ "./resources/js/landing/components/Home/BloqueServicios.vue");
-/* harmony import */ var _components_Home_BloqueSucursales_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Home/BloqueSucursales.vue */ "./resources/js/landing/components/Home/BloqueSucursales.vue");
-/* harmony import */ var _components_Home_BloqueColaboradores_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Home/BloqueColaboradores.vue */ "./resources/js/landing/components/Home/BloqueColaboradores.vue");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/navigation/navigation.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/pagination/pagination.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/autoplay/autoplay.js");
+/* harmony import */ var swiper_vue2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper-vue2 */ "./node_modules/swiper-vue2/dist/swiper-vue2.umd.min.js");
+/* harmony import */ var swiper_vue2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_vue2__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var swiper_swiper_bundle_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/swiper-bundle.css */ "./node_modules/swiper/swiper-bundle.css");
+/* harmony import */ var _mixins_propiedades_servicesPropiedades__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../mixins/propiedades/servicesPropiedades */ "./resources/js/landing/mixins/propiedades/servicesPropiedades.js");
+/* harmony import */ var _mixins_agentes_servicesAgentes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mixins/agentes/servicesAgentes */ "./resources/js/landing/mixins/agentes/servicesAgentes.js");
+/* harmony import */ var _components_Home_BloqueAgentes_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Home/BloqueAgentes.vue */ "./resources/js/landing/components/Home/BloqueAgentes.vue");
+/* harmony import */ var _components_Home_BloquePropiedades_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Home/BloquePropiedades.vue */ "./resources/js/landing/components/Home/BloquePropiedades.vue");
+/* harmony import */ var _components_Home_BloqueServicios_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Home/BloqueServicios.vue */ "./resources/js/landing/components/Home/BloqueServicios.vue");
+/* harmony import */ var _components_Home_BloqueSucursales_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Home/BloqueSucursales.vue */ "./resources/js/landing/components/Home/BloqueSucursales.vue");
+/* harmony import */ var _components_Home_BloqueColaboradores_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Home/BloqueColaboradores.vue */ "./resources/js/landing/components/Home/BloqueColaboradores.vue");
+
+
+
+swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperCore.use([swiper__WEBPACK_IMPORTED_MODULE_2__["default"], swiper__WEBPACK_IMPORTED_MODULE_3__["default"], swiper__WEBPACK_IMPORTED_MODULE_4__["default"]]);
 
 
 
@@ -5558,16 +5599,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mixins: [_mixins_propiedades_servicesPropiedades__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_agentes_servicesAgentes__WEBPACK_IMPORTED_MODULE_1__["default"]],
+  mixins: [_mixins_propiedades_servicesPropiedades__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_agentes_servicesAgentes__WEBPACK_IMPORTED_MODULE_6__["default"]],
   components: {
-    BloquePropiedades: _components_Home_BloquePropiedades_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    BloqueServicios: _components_Home_BloqueServicios_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    BloqueAgentes: _components_Home_BloqueAgentes_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    BloqueSucursales: _components_Home_BloqueSucursales_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    BloqueColaboradores: _components_Home_BloqueColaboradores_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    BloquePropiedades: _components_Home_BloquePropiedades_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+    BloqueServicios: _components_Home_BloqueServicios_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+    BloqueAgentes: _components_Home_BloqueAgentes_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    BloqueSucursales: _components_Home_BloqueSucursales_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+    BloqueColaboradores: _components_Home_BloqueColaboradores_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+    Swiper: swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.Swiper,
+    SwiperSlide: swiper_vue2__WEBPACK_IMPORTED_MODULE_0__.SwiperSlide
   },
   data: function data() {
-    return {};
+    return {
+      slidesPerView: 1,
+      spaceBetween: 0
+    };
   },
   computed: {},
   created: function created() {
@@ -5612,6 +5658,145 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=template&id=63e0067a":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=template&id=63e0067a ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render),
+/* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("a", {
+    staticClass: "text-decoration-none",
+    attrs: {
+      href: "/propiedad/".concat(_vm.propiedad.titulo.toLowerCase().replace(/\s+/g, "-"))
+    }
+  }, [_c("div", {
+    staticClass: "card card-imagenes-destacadas bg-white mb-3"
+  }, [_vm.propiedad.imagenes.length > 0 ? [_vm._l(_vm.propiedad.imagenes, function (imagen, index) {
+    var _imagen$url;
+    return imagen.principal ? _c("img", {
+      staticClass: "card-img-top",
+      attrs: {
+        src: (_imagen$url = imagen.url) !== null && _imagen$url !== void 0 ? _imagen$url : imagen.ruta_imagen,
+        alt: "..."
+      }
+    }) : _vm._e();
+  }), _vm._v(" "), !_vm.propiedad.imagenes.some(function (imagen) {
+    return imagen.principal;
+  }) ? _c("img", {
+    staticClass: "card-img-top",
+    attrs: {
+      src: "/images/propiedad_defecto.webp",
+      alt: "..."
+    }
+  }) : _vm._e()] : [_c("img", {
+    staticClass: "card-img-top",
+    attrs: {
+      src: "/images/propiedad_defecto.webp",
+      alt: "..."
+    }
+  })], _vm._v(" "), _c("div", {
+    staticClass: "card-img-overlay"
+  }, [_c("div", {
+    staticClass: "d-flex gap-2"
+  }, [_vm.propiedad.categoria_secundaria ? _c("div", {
+    staticClass: "card-tipo-publicacion"
+  }, [_vm.propiedad.categoria_secundaria.nombre !== "Estandar" ? _c("h5", [_c("span", {
+    staticClass: "badge bg-success text-white"
+  }, [_vm._v(_vm._s(_vm.propiedad.categoria_secundaria.nombre))])]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.propiedad.formato_negocio ? _c("div", {
+    staticClass: "card-formato-negocio"
+  }, [_c("h5", [_c("span", {
+    staticClass: "badge bg-danger text-white"
+  }, [_vm._v(_vm._s(_vm.propiedad.formato_negocio.nombre))])])]) : _vm._e()])]), _vm._v(" "), _vm.propiedad.tipo_propiedad ? _c("div", {
+    staticClass: "card-tipo-propiedad"
+  }, [_c("h5", [_c("span", {
+    staticClass: "badge bg-light text-dark"
+  }, [_vm._v(_vm._s(_vm.propiedad.tipo_propiedad.nombre))])])]) : _vm._e(), _vm._v(" "), _vm.propiedad.titulo.length > 0 || _vm.propiedad.nombre_region.length > 0 || _vm.propiedad.nombre_ciudad.length > 0 || _vm.propiedad.m2_superficie.length > 0 || _vm.propiedad.m2_construido.length > 0 || _vm.propiedad.pisos.length > 0 || _vm.propiedad.dormitorios.length > 0 || _vm.propiedad.banos.length > 0 ? _c("div", {
+    staticClass: "card-body"
+  }, [_vm.propiedad.titulo.length > 0 ? _c("h5", {
+    staticClass: "card-title texto-subtitulo"
+  }, [_vm._v("\n                " + _vm._s(_vm.propiedad.titulo) + "\n            ")]) : _vm._e(), _vm._v(" "), _vm.propiedad.direccion.length > 0 || _vm.propiedad.ubicacion.length > 0 ? _c("p", {
+    staticClass: "card-text"
+  }, [_c("i", {
+    staticClass: "bi bi-geo-alt"
+  }), _vm._v("\n                " + _vm._s(_vm.propiedad.direccion) + ",\n                " + _vm._s(_vm.propiedad.ubicacion.ciudad) + ",\n                " + _vm._s(_vm.propiedad.ubicacion.region) + "\n            ")]) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "d-flex flex-wrap align-items-center gap-2"
+  }, [_vm.propiedad.m2_superficie > 0 ? _c("div", {
+    staticClass: "d-flex align-items-center gap-2"
+  }, [_c("img", {
+    staticClass: "imagen-oscura",
+    attrs: {
+      src: "/images/superficie.svg"
+    }
+  }), _vm._v(" "), _c("b", {
+    staticClass: "card-text mb-0"
+  }, [_vm._v(_vm._s(_vm.propiedad.m2_superficie) + " m2")])]) : _vm._e(), _vm._v(" "), _vm.propiedad.m2_construido > 0 ? _c("div", {
+    staticClass: "d-flex align-items-center gap-2"
+  }, [_c("img", {
+    staticClass: "imagen-oscura",
+    attrs: {
+      src: "/images/construidos.svg"
+    }
+  }), _vm._v(" "), _c("b", {
+    staticClass: "card-text mb-0"
+  }, [_vm._v(_vm._s(_vm.propiedad.m2_construido) + " m2")])]) : _vm._e(), _vm._v(" "), _vm.propiedad.pisos > 0 ? _c("div", {
+    staticClass: "d-flex align-items-center gap-2"
+  }, [_c("img", {
+    staticClass: "imagen-oscura",
+    attrs: {
+      src: "/images/pisos.svg"
+    }
+  }), _vm._v(" "), _c("b", {
+    staticClass: "card-text mb-0"
+  }, [_vm._v(_vm._s(_vm.propiedad.pisos))])]) : _vm._e(), _vm._v(" "), _vm.propiedad.dormitorios > 0 ? _c("div", {
+    staticClass: "d-flex align-items-center gap-2"
+  }, [_c("img", {
+    staticClass: "imagen-oscura",
+    attrs: {
+      src: "/images/dormitorios.svg"
+    }
+  }), _vm._v(" "), _c("b", {
+    staticClass: "card-text mb-0"
+  }, [_vm._v(_vm._s(_vm.propiedad.dormitorios))])]) : _vm._e(), _vm._v(" "), _vm.propiedad.banos > 0 ? _c("div", {
+    staticClass: "d-flex align-items-center gap-2"
+  }, [_c("img", {
+    staticClass: "imagen-oscura",
+    attrs: {
+      src: "/images/banos.svg"
+    }
+  }), _vm._v(" "), _c("b", {
+    staticClass: "card-text mb-0"
+  }, [_vm._v(_vm._s(_vm.propiedad.banos))])]) : _vm._e()])]) : _vm._e(), _vm._v(" "), _vm.propiedad.valor_pesos !== "" ? _c("div", {
+    staticClass: "card-footer d-flex p-3 align-items-center justify-content-between"
+  }, [_vm.propiedad.users.imagenes.length > 0 ? _c("div", {
+    staticClass: "d-flex gap-2 align-items-center"
+  }, [_c("div", {
+    staticClass: "container-imagen-agente"
+  }, [_c("img", {
+    staticClass: "img-agente-miniatura",
+    attrs: {
+      src: _vm.propiedad.users.imagenes[0].ruta_imagen
+    }
+  })]), _vm._v(" "), _c("span", {
+    staticClass: "text-dark"
+  }, [_vm._v(_vm._s(_vm.propiedad.users.name))])]) : _vm._e(), _vm._v(" "), _c("div", {
+    staticClass: "text-dark fw-bold fs-4"
+  }, [_vm._v(_vm._s(_vm.propiedad.tipo_valor) + " " + _vm._s(_vm.propiedad.valor_pesos) + "\n            ")])]) : _vm._e()], 2)]);
+};
+var staticRenderFns = [];
+render._withStripped = true;
+
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue?vue&type=template&id=b31ae62c&scoped=true":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue?vue&type=template&id=b31ae62c&scoped=true ***!
@@ -5644,7 +5829,14 @@ var render = function render() {
     attrs: {
       src: _vm.propiedad.users.imagenes[0].ruta_imagen
     }
-  })]) : _vm._e(), _vm._v(" "), _c("ul", {
+  })]) : _c("div", {
+    staticClass: "container-imagen-agente-contactar"
+  }, [_c("img", {
+    staticClass: "img-agente-miniatura-contactar",
+    attrs: {
+      src: "/images/agente-defecto.webp"
+    }
+  })]), _vm._v(" "), _c("ul", {
     staticClass: "m-0"
   }, [_c("li", {
     staticClass: "d-flex align-items-center"
@@ -5831,7 +6023,9 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "d-flex gap-2 mb-4"
   }, [_c("span", {
-    staticClass: "badge bg-danger text-white"
+    staticClass: "badge bg-success text-white fs-6"
+  }, [_vm._v(_vm._s(_vm.propiedad.tipo_propiedad.nombre))]), _vm._v(" "), _c("span", {
+    staticClass: "badge bg-danger text-white fs-6"
   }, [_vm._v(_vm._s(_vm.propiedad.formato_negocio.nombre))])]), _vm._v(" "), _c("h1", {
     staticClass: "mb-0"
   }, [_vm._v(_vm._s(_vm.propiedad.titulo))])]), _vm._v(" "), _c("div", {
@@ -6120,8 +6314,13 @@ var render = function render() {
     }, [_c("img", {
       staticClass: "imagen-propiedad",
       attrs: {
-        src: imagen.ruta_imagen,
+        src: imagen.ruta_imagen || "../images/propiedad-defecto-detalle.webp",
         alt: "Imagen de propiedad"
+      },
+      on: {
+        error: function error($event) {
+          imagen.ruta_imagen = "../images/propiedad-defecto-detalle.webp";
+        }
       }
     })])];
   })], 2);
@@ -6179,7 +6378,7 @@ var render = function render() {
           spaceBetween: 0
         },
         1024: {
-          slidesPerView: _vm.propiedades_filtradas.length,
+          slidesPerView: _vm.propiedades_filtradas.length > 3 ? 3 : _vm.propiedades_filtradas.length === 1 ? 3 : _vm.propiedades_filtradas.length,
           spaceBetween: 20
         }
       }
@@ -6188,123 +6387,11 @@ var render = function render() {
     return _c("swiper-slide", {
       key: index,
       staticClass: "swiper-slide"
-    }, [_c("a", {
-      staticClass: "text-decoration-none",
+    }, [_c("CardPropiedades", {
       attrs: {
-        href: "/propiedad/".concat(propiedad.titulo.toLowerCase().replace(/\s+/g, "-"))
+        propiedad: propiedad
       }
-    }, [_c("div", {
-      staticClass: "card card-imagenes-destacadas bg-white mb-3"
-    }, [propiedad.imagenes.length > 0 ? [_vm._l(propiedad.imagenes, function (imagen, index) {
-      var _imagen$url;
-      return imagen.principal ? _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: (_imagen$url = imagen.url) !== null && _imagen$url !== void 0 ? _imagen$url : imagen.ruta_imagen,
-          alt: "..."
-        }
-      }) : _vm._e();
-    }), _vm._v(" "), !propiedad.imagenes.some(function (imagen) {
-      return imagen.principal;
-    }) ? _c("img", {
-      staticClass: "card-img-top",
-      attrs: {
-        src: "/images/propiedad_defecto.webp",
-        alt: "..."
-      }
-    }) : _vm._e()] : [_c("img", {
-      staticClass: "card-img-top",
-      attrs: {
-        src: "/images/propiedad_defecto.webp",
-        alt: "..."
-      }
-    })], _vm._v(" "), _c("div", {
-      staticClass: "card-img-overlay"
-    }, [_c("div", {
-      staticClass: "d-flex gap-2"
-    }, [propiedad.categoria_secundaria ? _c("div", {
-      staticClass: "card-tipo-publicacion"
-    }, [_c("h5", [_c("span", {
-      staticClass: "badge bg-success text-white"
-    }, [_vm._v(_vm._s(propiedad.categoria_secundaria.nombre))])])]) : _vm._e(), _vm._v(" "), propiedad.formato_negocio ? _c("div", {
-      staticClass: "card-formato-negocio"
-    }, [_c("h5", [_c("span", {
-      staticClass: "badge bg-danger text-white"
-    }, [_vm._v(_vm._s(propiedad.formato_negocio.nombre))])])]) : _vm._e()])]), _vm._v(" "), propiedad.tipo_propiedad ? _c("div", {
-      staticClass: "card-tipo-propiedad"
-    }, [_c("h5", [_c("span", {
-      staticClass: "badge bg-light text-dark"
-    }, [_vm._v(_vm._s(propiedad.tipo_propiedad.nombre))])])]) : _vm._e(), _vm._v(" "), propiedad.titulo.length > 0 || propiedad.nombre_region.length > 0 || propiedad.nombre_ciudad.length > 0 || propiedad.m2_superficie.length > 0 || propiedad.m2_construido.length > 0 || propiedad.pisos.length > 0 || propiedad.dormitorios.length > 0 || propiedad.banos.length > 0 ? _c("div", {
-      staticClass: "card-body"
-    }, [propiedad.titulo.length > 0 ? _c("h5", {
-      staticClass: "card-title texto-subtitulo"
-    }, [_vm._v("\n                                " + _vm._s(propiedad.titulo) + "\n                            ")]) : _vm._e(), _vm._v(" "), propiedad.direccion.length > 0 || propiedad.ubicacion.length > 0 ? _c("p", {
-      staticClass: "card-text"
-    }, [_c("i", {
-      staticClass: "bi bi-geo-alt"
-    }), _vm._v("\n                                " + _vm._s(propiedad.direccion) + ",\n                                " + _vm._s(propiedad.ubicacion.ciudad) + ",\n                                " + _vm._s(propiedad.ubicacion.region) + "\n                            ")]) : _vm._e(), _vm._v(" "), _c("div", {
-      staticClass: "d-flex flex-wrap align-items-center gap-2"
-    }, [propiedad.m2_superficie > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/superficie.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.m2_superficie) + " m2")])]) : _vm._e(), _vm._v(" "), propiedad.m2_construido > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/construidos.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.m2_construido) + " m2")])]) : _vm._e(), _vm._v(" "), propiedad.pisos > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/pisos.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.pisos))])]) : _vm._e(), _vm._v(" "), propiedad.dormitorios > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/dormitorios.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.dormitorios))])]) : _vm._e(), _vm._v(" "), propiedad.banos > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/banos.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.banos))])]) : _vm._e()])]) : _vm._e(), _vm._v(" "), propiedad.valor_pesos !== "" ? _c("div", {
-      staticClass: "card-footer d-flex p-3 align-items-center justify-content-between"
-    }, [_c("div", {
-      staticClass: "d-flex gap-2 align-items-center"
-    }, [propiedad.users.imagenes.length > 0 ? _c("div", {
-      staticClass: "container-imagen-agente"
-    }, [_c("img", {
-      staticClass: "img-agente-miniatura",
-      attrs: {
-        src: propiedad.users.imagenes[0].ruta_imagen
-      }
-    })]) : _vm._e(), _vm._v(" "), _c("span", {
-      staticClass: "text-dark"
-    }, [_vm._v(_vm._s(propiedad.users.name))])]), _vm._v(" "), _c("div", {
-      staticClass: "text-dark fw-bold fs-4"
-    }, [_vm._v(_vm._s(propiedad.tipo_valor) + " " + _vm._s(propiedad.valor_pesos) + "\n                            ")])]) : _vm._e()], 2)])]);
+    })], 1);
   }), 1)], 1)]) : _vm._e();
 };
 var staticRenderFns = [function () {
@@ -6385,12 +6472,19 @@ var render = function render() {
       style: {
         animationDelay: index * 0.1 + "s"
       }
-    }, [_c("div", {
+    }, [agente.imagenes.length > 0 ? _c("div", {
       staticClass: "mb-3"
     }, [_c("img", {
       staticClass: "img-fluid rounded-3",
       attrs: {
         src: agente.imagenes[0].ruta_imagen
+      }
+    })]) : _c("div", {
+      staticClass: "mb-3"
+    }, [_c("img", {
+      staticClass: "img-fluid rounded-3",
+      attrs: {
+        src: "/images/agente-defecto.webp"
       }
     })]), _vm._v(" "), _c("h3", {
       staticClass: "mb-3"
@@ -6541,7 +6635,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "container pt-5"
+    staticClass: "container pt-5 pb-5"
   }, [_vm._m(0), _vm._v(" "), _c("ul", {
     staticClass: "nav nav-pills nav-fill flex-column flex-sm-row mb-5"
   }, [_c("li", {
@@ -6572,116 +6666,25 @@ var render = function render() {
     }, [_vm._v(_vm._s(tipo_propiedad.nombre))])])];
   })], 2), _vm._v(" "), _c("div", {
     staticClass: "row"
-  }, _vm._l(_vm.obtenerPropiedadesPorTipo, function (propiedad) {
+  }, _vm._l(_vm.obtenerPropiedadesPorTipo.slice(0, _vm.propiedadesMostradas), function (propiedad, idx) {
     return _c("div", {
+      key: propiedad.id,
       staticClass: "col-lg-4 col-md-12"
-    }, [_c("a", {
-      staticClass: "text-decoration-none",
+    }, [_c("CardPropiedades", {
       attrs: {
-        href: "/propiedad/".concat(propiedad.titulo.toLowerCase().replace(/\s+/g, "-"))
+        propiedad: propiedad
       }
-    }, [_c("div", {
-      staticClass: "card card-propiedad-home bg-white mb-3"
-    }, [propiedad.imagenes.length > 0 ? [_vm._l(propiedad.imagenes, function (imagen, index) {
-      var _imagen$url;
-      return imagen.principal ? _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: (_imagen$url = imagen.url) !== null && _imagen$url !== void 0 ? _imagen$url : imagen.ruta_imagen,
-          alt: "..."
-        }
-      }) : _vm._e();
-    }), _vm._v(" "), !propiedad.imagenes.some(function (imagen) {
-      return imagen.principal;
-    }) ? _c("img", {
-      staticClass: "card-img-top",
-      attrs: {
-        src: "/images/propiedad_defecto.webp",
-        alt: "..."
-      }
-    }) : _vm._e()] : [_c("img", {
-      staticClass: "card-img-top",
-      attrs: {
-        src: "/images/propiedad_defecto.webp",
-        alt: "..."
-      }
-    })], _vm._v(" "), _c("div", {
-      staticClass: "card-img-overlay"
-    }, [_c("div", {
-      staticClass: "d-flex gap-2"
-    }, [propiedad.categoria_secundaria ? _c("div", {
-      staticClass: "card-tipo-publicacion"
-    }, [_c("h5", [_c("span", {
-      staticClass: "badge bg-success text-white"
-    }, [_vm._v(_vm._s(propiedad.categoria_secundaria.nombre))])])]) : _vm._e(), _vm._v(" "), propiedad.formato_negocio ? _c("div", {
-      staticClass: "card-formato-negocio"
-    }, [_c("h5", [_c("span", {
-      staticClass: "badge bg-danger text-white"
-    }, [_vm._v(_vm._s(propiedad.formato_negocio.nombre))])])]) : _vm._e()])]), _vm._v(" "), propiedad.tipo_propiedad ? _c("div", {
-      staticClass: "card-tipo-propiedad"
-    }, [_c("h5", [_c("span", {
-      staticClass: "badge bg-light text-dark"
-    }, [_vm._v(_vm._s(propiedad.tipo_propiedad.nombre))])])]) : _vm._e(), _vm._v(" "), propiedad.titulo.length > 0 || propiedad.nombre_region.length > 0 || propiedad.nombre_ciudad.length > 0 || propiedad.m2_superficie.length > 0 || propiedad.m2_construido.length > 0 || propiedad.pisos.length > 0 || propiedad.dormitorios.length > 0 || propiedad.banos.length > 0 ? _c("div", {
-      staticClass: "card-body"
-    }, [propiedad.titulo.length > 0 ? _c("h5", {
-      staticClass: "card-title texto-subtitulo"
-    }, [_vm._v("\n                            " + _vm._s(propiedad.titulo) + "\n                        ")]) : _vm._e(), _vm._v(" "), propiedad.direccion.length > 0 || propiedad.ubicacion.length > 0 ? _c("p", {
-      staticClass: "card-text"
-    }, [_c("i", {
-      staticClass: "bi bi-geo-alt"
-    }), _vm._v("\n                            " + _vm._s(propiedad.direccion) + ",\n                            " + _vm._s(propiedad.ubicacion.ciudad) + ",\n                            " + _vm._s(propiedad.ubicacion.region) + "\n                        ")]) : _vm._e(), _vm._v(" "), _c("div", {
-      staticClass: "d-flex flex-wrap align-items-center gap-2"
-    }, [propiedad.m2_superficie > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/superficie.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.m2_superficie) + " m2")])]) : _vm._e(), _vm._v(" "), propiedad.m2_construido > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/construidos.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.m2_construido) + " m2")])]) : _vm._e(), _vm._v(" "), propiedad.pisos > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/pisos.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.pisos))])]) : _vm._e(), _vm._v(" "), propiedad.dormitorios > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/dormitorios.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.dormitorios))])]) : _vm._e(), _vm._v(" "), propiedad.banos > 0 ? _c("div", {
-      staticClass: "d-flex align-items-center gap-2"
-    }, [_c("img", {
-      staticClass: "imagen-oscura",
-      attrs: {
-        src: "/images/banos.svg"
-      }
-    }), _vm._v(" "), _c("b", {
-      staticClass: "card-text mb-0"
-    }, [_vm._v(_vm._s(propiedad.banos))])]) : _vm._e()])]) : _vm._e(), _vm._v(" "), propiedad.valor_pesos.length > 0 ? _c("ul", {
-      staticClass: "list-group list-group-flush align-items-end"
-    }, [_c("li", {
-      staticClass: "list-group-item bg-white text-dark fw-bold fs-4"
-    }, [_vm._v(_vm._s(propiedad.tipo_valor) + " " + _vm._s(propiedad.valor_pesos) + "\n                        ")])]) : _vm._e()], 2)])]);
-  }), 0)]);
+    })], 1);
+  }), 0), _vm._v(" "), _vm.obtenerPropiedadesPorTipo.length > _vm.propiedadesMostradas ? _c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-12 text-center mt-3"
+  }, [_c("button", {
+    staticClass: "btn btn-base-dv",
+    on: {
+      click: _vm.verMasPropiedades
+    }
+  }, [_vm._v("\n                Ver más propiedades\n            ")])])]) : _vm._e()]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -6737,7 +6740,7 @@ var staticRenderFns = [function () {
     staticClass: "mb-4"
   }, [_c("img", {
     attrs: {
-      src: "/images/apreton-de-manos.png",
+      src: "/images/apreton-de-manos.webp",
       width: "80",
       height: "80"
     }
@@ -6751,7 +6754,7 @@ var staticRenderFns = [function () {
     staticClass: "mb-4"
   }, [_c("img", {
     attrs: {
-      src: "/images/comprar-casa.png",
+      src: "/images/comprar-casa.webp",
       width: "80",
       height: "80"
     }
@@ -6765,7 +6768,7 @@ var staticRenderFns = [function () {
     staticClass: "mb-4"
   }, [_c("img", {
     attrs: {
-      src: "/images/propiedad-administrativa.png",
+      src: "/images/propiedad-administrativa.webp",
       width: "80",
       height: "80"
     }
@@ -6864,7 +6867,82 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_vm._m(0), _vm._v(" "), _c("BloquePropiedades", {
+  return _c("div", [_c("swiper", {
+    attrs: {
+      "slides-per-view": _vm.slidesPerView,
+      "space-between": _vm.spaceBetween,
+      loop: true,
+      navigation: false,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      }
+    }
+  }, [_c("swiper-slide", {
+    staticClass: "swiper-slide position-relative"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: "/images/FONDO-1.webp",
+      alt: "..."
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "slide-caption-overlay d-flex flex-column justify-content-center align-items-center"
+  }, [_c("div", {
+    staticClass: "slide-caption-content text-white text-center p-4 rounded"
+  }, [_c("h1", {
+    staticClass: "fw-bold mb-2"
+  }, [_vm._v("Búsqueda de Bienes Raíces")]), _vm._v(" "), _c("p", {
+    staticClass: "mb-0"
+  }, [_vm._v("\n                        INFINITY, pone a disposición su Plataforma Comercial para la Compra, Venta o\n                        Arriendo de un Bien Raíz. Sean estas para fines Comerciales, Productivos o\n                        Habitacionales.\n                    ")])])])]), _vm._v(" "), _c("swiper-slide", {
+    staticClass: "swiper-slide position-relative"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: "/images/FONDO-2.webp",
+      alt: "..."
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "slide-caption-overlay d-flex flex-column justify-content-center align-items-center"
+  }, [_c("div", {
+    staticClass: "slide-caption-content text-white text-center p-4 rounded"
+  }, [_c("h1", {
+    staticClass: "fw-bold mb-2"
+  }, [_vm._v("Administración de Arriendo")]), _vm._v(" "), _c("p", {
+    staticClass: "mb-0"
+  }, [_vm._v("\n                        INFINITY, pone a disposición su Estructura Organizacional para llevar a cabo la\n                        Administración\n                        del Bien Raíz de manera integral, desde la Cobranza al pago de los Gastos Comunes y solución\n                        de\n                        controversias.\n                    ")])])])]), _vm._v(" "), _c("swiper-slide", {
+    staticClass: "swiper-slide position-relative"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: "/images/FONDO-3.webp",
+      alt: "..."
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "slide-caption-overlay d-flex flex-column justify-content-center align-items-center"
+  }, [_c("div", {
+    staticClass: "slide-caption-content text-white text-center p-4 rounded"
+  }, [_c("h1", {
+    staticClass: "fw-bold mb-2"
+  }, [_vm._v("Gestión de Compra y Venta de Propiedades")]), _vm._v(" "), _c("p", {
+    staticClass: "mb-0"
+  }, [_vm._v("\n                        INFINITY, apoya y asesora en todo momento en la recepción del Bien Raíz para su Venta, así\n                        como\n                        en las gestiones para su Adquisición, sean estos para fines Habitacionales, Comerciales o\n                        Productivos.\n                    ")])])])]), _vm._v(" "), _c("swiper-slide", {
+    staticClass: "swiper-slide position-relative"
+  }, [_c("img", {
+    staticClass: "d-block w-100",
+    attrs: {
+      src: "/images/FONDO-4.webp",
+      alt: "..."
+    }
+  }), _vm._v(" "), _c("div", {
+    staticClass: "slide-caption-overlay d-flex flex-column justify-content-center align-items-center"
+  }, [_c("div", {
+    staticClass: "slide-caption-content text-white text-center p-4 rounded"
+  }, [_c("h1", {
+    staticClass: "fw-bold mb-2"
+  }, [_vm._v("Arriendo de Propiedades")]), _vm._v(" "), _c("p", {
+    staticClass: "mb-0"
+  }, [_vm._v("\n                        INFINITY, pone a disposición su Estructura Organizacional para llevar a cabo la\n                        Administración\n                        del Bien Raíz de manera integral, desde la Cobranza al pago de los Gastos Comunes y solución\n                        de\n                        controversias.\n                    ")])])])])], 1), _vm._v(" "), _c("BloquePropiedades", {
     attrs: {
       propiedades: _vm.propiedades
     }
@@ -6874,227 +6952,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("BloqueSucursales"), _vm._v(" "), _c("BloqueColaboradores")], 1);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("header", [_c("div", {
-    staticClass: "carousel slide mb-5",
-    attrs: {
-      id: "carouselExampleCaptions",
-      "data-bs-ride": "carousel"
-    }
-  }, [_c("div", {
-    staticClass: "carousel-indicators"
-  }, [_c("button", {
-    staticClass: "active",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide-to": "0",
-      "aria-current": "true",
-      "aria-label": "Slide 1"
-    }
-  }), _vm._v(" "), _c("button", {
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide-to": "1",
-      "aria-label": "Slide 2"
-    }
-  }), _vm._v(" "), _c("button", {
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide-to": "2",
-      "aria-label": "Slide 3"
-    }
-  }), _vm._v(" "), _c("button", {
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide-to": "3",
-      "aria-label": "Slide 3"
-    }
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "carousel-inner"
-  }, [_c("div", {
-    staticClass: "carousel-item active"
-  }, [_c("img", {
-    staticClass: "d-block w-100",
-    attrs: {
-      src: "/images/FONDO-1.webp",
-      alt: "..."
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "carousel-caption p-0 d-flex justify-content-center align-items-center"
-  }, [_c("div", {
-    staticClass: "bg-dark p-lg-4 p-md-3 text-white bg-opacity-75 rounded"
-  }, [_c("h1", {
-    staticClass: "titulo-carrusel fw-bold"
-  }, [_vm._v("Búsqueda de Bienes Raíces")]), _vm._v(" "), _c("p", {
-    staticClass: "subtitulo-carrusel mb-0"
-  }, [_vm._v("\n                                INFINITY, pone a disposición su Plataforma Comercial para la Compra, Venta o\n                                Arriendo de un Bien Raíz. Sean estas para fines Comerciales, Productivos o\n                                Habitacionales.\n                            ")])])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-prev",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "prev"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-next",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "next"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-next-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Next")])])]), _vm._v(" "), _c("div", {
-    staticClass: "carousel-item"
-  }, [_c("img", {
-    staticClass: "d-block w-100",
-    attrs: {
-      src: "/images/FONDO-2.webp",
-      alt: "..."
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "carousel-caption p-0 d-flex justify-content-center align-items-center"
-  }, [_c("div", {
-    staticClass: "bg-dark p-lg-4 p-md-3 text-white bg-opacity-75 rounded"
-  }, [_c("h1", {
-    staticClass: "titulo-carrusel fw-bold"
-  }, [_vm._v("Administración de Arriendo")]), _vm._v(" "), _c("p", {
-    staticClass: "subtitulo-carrusel mb-0"
-  }, [_vm._v("INFINITY, pone a disposición su Estructura\n                                Organizacional\n                                para llevar a\n                                cabo\n                                la Administración del Bien Raíz de manera integral, desde la Cobranza al pago de los\n                                Gastos\n                                Comunes y solución de controversias.")])])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-prev",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "prev"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-next",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "next"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-next-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Next")])])]), _vm._v(" "), _c("div", {
-    staticClass: "carousel-item"
-  }, [_c("img", {
-    staticClass: "d-block w-100",
-    attrs: {
-      src: "/images/FONDO-3.webp",
-      alt: "..."
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "carousel-caption p-0 d-flex justify-content-center align-items-center"
-  }, [_c("div", {
-    staticClass: "bg-dark p-lg-4 p-md-3 text-white bg-opacity-75 rounded"
-  }, [_c("h1", {
-    staticClass: "titulo-carrusel fw-bold"
-  }, [_vm._v("Gestión de Compra y Venta de Propiedades")]), _vm._v(" "), _c("p", {
-    staticClass: "subtitulo-carrusel mb-0"
-  }, [_vm._v("INFINITY, apoya y asesora en todo momento en la\n                                recepción del Bien Raíz\n                                para\n                                su Venta, así como en las gestiones para su Adquisición, sean estos para fines\n                                Habitacionales, Comerciales o Productivos.")])])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-prev",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "prev"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-next",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "next"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-next-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Next")])])]), _vm._v(" "), _c("div", {
-    staticClass: "carousel-item"
-  }, [_c("img", {
-    staticClass: "d-block w-100",
-    attrs: {
-      src: "/images/FONDO-4.webp",
-      alt: "..."
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "carousel-caption p-0 d-flex justify-content-center align-items-center"
-  }, [_c("div", {
-    staticClass: "bg-dark p-lg-4 p-md-3 text-white bg-opacity-75 rounded"
-  }, [_c("h1", {
-    staticClass: "titulo-carrusel fw-bold"
-  }, [_vm._v("Arriendo de Propiedades")]), _vm._v(" "), _c("p", {
-    staticClass: "subtitulo-carrusel mb-0"
-  }, [_vm._v("INFINITY, pone a disposición su Estructura\n                                Organizacional para llevar a\n                                cabo\n                                la Administración del Bien Raíz de manera integral, desde la Cobranza al pago de los\n                                Gastos\n                                Comunes y solución de controversias.")])])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-prev",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "prev"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-prev-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Previous")])]), _vm._v(" "), _c("button", {
-    staticClass: "carousel-control-next",
-    attrs: {
-      type: "button",
-      "data-bs-target": "#carouselExampleCaptions",
-      "data-bs-slide": "next"
-    }
-  }, [_c("span", {
-    staticClass: "carousel-control-next-icon",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c("span", {
-    staticClass: "visually-hidden"
-  }, [_vm._v("Next")])])])])])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -7360,7 +7218,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
                 nombre: data.nombre,
                 email: data.email,
                 telefono: data.telefono,
-                mensaje: data.mensaje
+                mensaje: data.mensaje,
+                url_propiedad: data.url_propiedad,
+                titulo_propiedad: data.titulo_propiedad
               });
             case 5:
               response = _context2.sent;
@@ -7585,7 +7445,7 @@ function formatoMiles(valor) {
     valor = Number(valor);
     if (isNaN(valor)) return '';
   }
-  return new Intl.NumberFormat('es-ES').format(valor);
+  return valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
 /***/ }),
@@ -33838,6 +33698,45 @@ function createElementIfNotDefined($container, params, createElements, checkProp
 
 /***/ }),
 
+/***/ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/landing/components/CardPropiedades/CardPropiedades.vue ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _CardPropiedades_vue_vue_type_template_id_63e0067a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CardPropiedades.vue?vue&type=template&id=63e0067a */ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=template&id=63e0067a");
+/* harmony import */ var _CardPropiedades_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardPropiedades.vue?vue&type=script&lang=js */ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=script&lang=js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CardPropiedades_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CardPropiedades_vue_vue_type_template_id_63e0067a__WEBPACK_IMPORTED_MODULE_0__.render,
+  _CardPropiedades_vue_vue_type_template_id_63e0067a__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/landing/components/CardPropiedades/CardPropiedades.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue":
 /*!******************************************************************************!*\
   !*** ./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue ***!
@@ -34314,6 +34213,22 @@ component.options.__file = "resources/js/landing/views/Propiedad.vue"
 
 /***/ }),
 
+/***/ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=script&lang=js":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CardPropiedades_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CardPropiedades.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=script&lang=js");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CardPropiedades_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue?vue&type=script&lang=js":
 /*!******************************************************************************************************!*\
   !*** ./resources/js/landing/components/DetallePropiedad/BloqueContactar.vue?vue&type=script&lang=js ***!
@@ -34471,6 +34386,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Propiedad_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Propiedad.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/views/Propiedad.vue?vue&type=script&lang=js");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Propiedad_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=template&id=63e0067a":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=template&id=63e0067a ***!
+  \***********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CardPropiedades_vue_vue_type_template_id_63e0067a__WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CardPropiedades_vue_vue_type_template_id_63e0067a__WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CardPropiedades_vue_vue_type_template_id_63e0067a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CardPropiedades.vue?vue&type=template&id=63e0067a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/landing/components/CardPropiedades/CardPropiedades.vue?vue&type=template&id=63e0067a");
+
 
 /***/ }),
 

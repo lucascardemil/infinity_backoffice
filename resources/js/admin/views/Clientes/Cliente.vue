@@ -13,6 +13,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">Telefono</th>
                         <th scope="col">Mensaje</th>
+                        <th scope="col">Propiedad Interesada</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Contactado</th>
                     </tr>
@@ -25,6 +26,7 @@
                             <td>{{ cliente.email }}</td>
                             <td>{{ cliente.telefono }}</td>
                             <td>{{ cliente.mensaje }}</td>
+                            <td>{{ cliente.propiedad }}</td>
                             <td v-if="cliente.estado == 0">
                                 <span class="badge rounded-pill bg-danger">No Contactado</span>
                             </td>

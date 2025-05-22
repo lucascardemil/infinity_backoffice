@@ -36,11 +36,16 @@ Route::delete('/delete-image', [App\Http\Controllers\ImageCloudinaryController::
 
 
 
+Route::group(['middleware' => ['auth', 'permission:uf']], function () {
+    Route::get('/admin/uf', [App\Http\Controllers\UfController::class, 'index'])->name('admin.uf.index');
+    Route::get('/uf/all', [App\Http\Controllers\UfController::class, 'all']);
+    Route::post('/uf/store', [App\Http\Controllers\UfController::class, 'store']);
+});
+
 Route::group(['middleware' => ['auth', 'permission:configuraciones']], function () {
     Route::get('/admin/configuraciones', [App\Http\Controllers\ConfiguracionController::class, 'index'])->name('admin.configuraciones.index');
     Route::post('/configuraciones/store', [App\Http\Controllers\ConfiguracionController::class, 'store']);
 });
-
 
 Route::group(['middleware' => ['auth', 'permission:propiedad']], function () {
     Route::get('/admin/propiedad', [App\Http\Controllers\PropiedadController::class, 'index'])->name('admin.propiedad.index');
@@ -129,8 +134,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/atributo_adicionales/all-select', [App\Http\Controllers\AtributoAdicionalController::class, 'all_select']);
 });
 
-
-
 Route::get('/', [App\Http\Controllers\LandingController::class, 'home'])->name('landing.home');
 Route::get('/propiedad/{titulo?}', [App\Http\Controllers\LandingController::class, 'propiedad'])->name('landing.propiedad');
 Route::get('/landing/propiedades', [App\Http\Controllers\LandingController::class, 'propiedades']);
@@ -143,4 +146,13 @@ Route::get('/storage-link', function () {
     $targetFolder = storage_path('app/public');
     $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
     symlink($targetFolder, $linkFolder);
+});
+
+
+Route::get('/check-auth', function () {
+    if (!auth()->check()) {
+        return response()->json(['message' => 'Unauthenticated'], 401);
+    }
+
+    return response()->json(['message' => 'Authenticated', 'user' => auth()->user()]);
 });

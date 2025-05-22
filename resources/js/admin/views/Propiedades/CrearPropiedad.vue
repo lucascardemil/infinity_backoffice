@@ -54,22 +54,22 @@
                                     @input="convertir" />
                             </div>
                             <div class="input-group mb-3">
-                                <select class="form-select" id="selectValorUF" v-model="tipoConversion">
+                                <select class="form-select" id="selectValorUF" v-model="tipoConversion" @change="convertir">
                                     <option>UF a Pesos</option>
                                     <option>Pesos a UF</option>
                                 </select>
                                 <input class="form-control"
                                     :class="{ 'is-invalid': errors?.valor_pesos ? errors?.valor_pesos.length > 0 : '' }"
-                                    v-model="propiedad.cantidad" id="cantidadValorUF" placeholder="Ingrese cantidad"
+                                    v-model="propiedad.cantidad" id="cantidadValorUF" placeholder="Ingrese Monto Pesos"
                                     @input="convertir" />
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="inputCrearPropiedadValorPesos" class="form-label
-                                        ">{{ tipoConversion === "UF a Pesos" ? "Valor Pesos" : "Valor UF" }}</label>
+                                        ">{{ tipoConversion === "UF a Pesos" ? "Valor Total Pesos" : "Valor Total UF" }}</label>
                             <input type="text" autocomplete="off" class="form-control"
                                 :class="{ 'is-invalid': errors?.valor_pesos ? errors?.valor_pesos.length > 0 : '' }"
-                                id="inputCrearPropiedadValorPesos" :placeholder="tipoConversion"
+                                id="inputCrearPropiedadValorPesos" placeholder="Total"
                                 v-model="propiedad.valor_pesos" min="0">
                         </div>
                         <div class="mb-3">
@@ -250,7 +250,8 @@ export default {
         formatos_negocios: Array,
         ubicaciones: Array,
         categorias_secundarias: Array,
-        atributos_adicionales: Array
+        atributos_adicionales: Array,
+        valor_uf: Number
     },
     components: {
         LoadingComponent,
@@ -272,7 +273,7 @@ export default {
                 cantidad: '',
                 valor_pesos: '',
                 tipo_valor: '',
-                valor_uf: '',
+                valor_uf: this.valor_uf,
                 region: null,
                 nombre_region: '',
                 ciudad: null,

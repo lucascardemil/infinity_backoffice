@@ -33,28 +33,40 @@ class PropiedadController extends Controller
 
     public function all()
     {
-        $user = $this->loginController->getRoleUser();
-        $userId = $user->original->id ?? null;
-        $userRole = $user->original->role ?? null;
+        $user = auth()->user(); // Obtener al usuario autenticado
+        $userId = $user->id ?? null;
+        $userRole = $user->roles->first()->name ?? null; // Obtener el nombre del rol del usuario
 
+        // Verificar permisos de acceso según el rol
         if (!in_array($userRole, ['administrador', 'agente'])) {
             return response()->json(['message' => 'No tiene permisos para acceder a esta información'], 403);
         }
 
+        // Crear la consulta base
         $query = Propiedad::with('imagenes');
+
+        // Si el rol es 'agente', filtramos por el user_id del agente
         if ($userRole === 'agente') {
             $query->where('user_id', $userId);
         }
 
+        // Obtener las propiedades
         $propiedades = $query->get();
+
+        // Configurar los botones según el rol
         $botones = [
             'editar' => true,
-            'eliminar' => $userRole === 'administrador',
+            'eliminar' => $userRole === 'administrador', // Solo el administrador puede eliminar
             'ver' => true,
         ];
 
-        return response()->json(['propiedades' => $propiedades, 'botones' => $botones], 200);
+        // Devolver la respuesta con las propiedades y los botones
+        return response()->json([
+            'propiedades' => $propiedades,
+            'botones' => $botones,
+        ], 200);
     }
+
 
     public function store(Request $request)
     {
@@ -70,7 +82,6 @@ class PropiedadController extends Controller
             'dormitorios' => 'required|integer',
             'banos' => 'required|integer',
             'categoria_secundaria_id' => 'integer',
-            'atributos_adicionales' => 'required|string',
             'descripcion' => 'required|string',
             'direccion' => 'required|string',
             'imagenes' => 'required|array',
@@ -98,7 +109,7 @@ class PropiedadController extends Controller
             'dormitorios' => $request->dormitorios,
             'banos' => $request->banos,
             'categoria_secundaria_id' => $request->categoria_secundaria_id,
-            'atributos_adicionales' => $request->atributos_adicionales,
+            'atributos_adicionales' => $request->atributos_adicionales ?? '',
             'descripcion' => $request->descripcion,
             'direccion' => $request->direccion,
             'estado' => $request->estado_propiedad === 'null' ? 'no_disponible' : $request->estado_propiedad,

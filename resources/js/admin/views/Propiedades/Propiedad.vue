@@ -39,9 +39,10 @@ import ubicacionesMixin from '../../mixins/ubicacion/ubicacionesMixin';
 import categoriasSecundariasMixin from '../../mixins/categoria_secundaria/categoriasSecundariasMixin';
 import atributosAdicionalesMixin from '../../mixins/atributo_adicional/atributosAdicionalesMixin';
 import propiedadMixin from '../../mixins/propiedad/servicesPropiedadMixin';
+import ufMixin from '../../mixins/uf/ufMixin';
 
 export default {
-    mixins: [tiposPropiedadesMixin, formatosNegociosMixin, ubicacionesMixin, categoriasSecundariasMixin, atributosAdicionalesMixin, propiedadMixin],
+    mixins: [tiposPropiedadesMixin, formatosNegociosMixin, ubicacionesMixin, categoriasSecundariasMixin, atributosAdicionalesMixin, propiedadMixin, ufMixin],
     components: {
         CrearPropiedad,
         AdministracionPropiedad
@@ -62,7 +63,8 @@ export default {
                 loading_propiedades: this.loading_propiedades,
                 propiedades: this.propiedades,
                 errors: this.errors,
-                botones: this.botones
+                botones: this.botones,
+                valor_uf: this.recuperar_valor_uf.valor_uf
             };
         }
     },
@@ -79,6 +81,7 @@ export default {
         this.fetchCategoriasSecundariasSelect();
         this.fetchAtributosAdicionalesSelect();
         this.fetchAllPropiedades();
+        this.fetchAllValorUF();
     },
 }
 </script>

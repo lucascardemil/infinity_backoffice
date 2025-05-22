@@ -265,7 +265,7 @@
                                         <i class="bi bi-plus-circle"></i> Editar Propiedad
                                     </button>
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-12 col-sm-12 mt-3">
                                     <VistaPreviaPropiedad :propiedad="editar" :errors_editar="errors_editar" />
                                 </div>
                             </div>
@@ -358,7 +358,7 @@ export default {
                     this.editar.dormitorios = propiedadEditar.dormitorios
                     this.editar.banos = propiedadEditar.banos
                     this.editar.categoria_secundaria_id = propiedadEditar.categoria_secundaria_id
-                    this.editar.atributos_adicionales_selected = JSON.parse(propiedadEditar.atributos_adicionales)
+                    this.editar.atributos_adicionales_selected = propiedadEditar.atributos_adicionales !== '' ? JSON.parse(propiedadEditar.atributos_adicionales) : []
                     this.editar.descripcion = propiedadEditar.descripcion
                     this.editar.imagenes = propiedadEditar.imagenes
                     this.editar.direccion = propiedadEditar.direccion
