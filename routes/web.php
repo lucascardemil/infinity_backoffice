@@ -34,7 +34,12 @@ Route::get('/user/role', [App\Http\Controllers\HomeController::class, 'getUserRo
 Route::post('/upload-image', [App\Http\Controllers\ImageCloudinaryController::class, 'upload']);
 Route::delete('/delete-image', [App\Http\Controllers\ImageCloudinaryController::class, 'delete']);
 
-
+Route::group(['middleware' => ['auth', 'permission:whatsapp']], function () {
+    Route::get('/admin/whatsapp', [App\Http\Controllers\WhatsappController::class, 'index'])->name('admin.whatsapp.index');
+    Route::get('/whatsapp/all', [App\Http\Controllers\WhatsappController::class, 'all']);
+    Route::post('/whatsapp/store', [App\Http\Controllers\WhatsappController::class, 'store']);
+    Route::put('/whatsapp/update/{id}', [App\Http\Controllers\WhatsappController::class, 'update']);
+});
 
 Route::group(['middleware' => ['auth', 'permission:uf']], function () {
     Route::get('/admin/uf', [App\Http\Controllers\UfController::class, 'index'])->name('admin.uf.index');
@@ -140,6 +145,7 @@ Route::get('/landing/propiedades', [App\Http\Controllers\LandingController::clas
 Route::get('/landing/agentes', [App\Http\Controllers\LandingController::class, 'agentes']);
 Route::get('/configuraciones/all', [App\Http\Controllers\ConfiguracionController::class, 'all']);
 Route::post('/clientes/store', [App\Http\Controllers\LandingController::class, 'store']);
+Route::get('/landing/whatsapp', [App\Http\Controllers\LandingController::class, 'whatsapp']);
 
 
 Route::get('/storage-link', function () {

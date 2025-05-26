@@ -65,6 +65,7 @@
         <BloqueAgentes :agentes="agentes" />
         <BloqueSucursales />
         <BloqueColaboradores />
+        <Whatsapp v-show="whatsapp.estado" :whatsapp="whatsapp"/>
     </div>
 </template>
 <script>
@@ -78,21 +79,24 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 import servicesPropiedades from '../mixins/propiedades/servicesPropiedades';
 import servicesAgentes from '../mixins/agentes/servicesAgentes';
+import servicesWhatsapp from "../mixins/whatsapp/servicesWhatsapp";
 
 import BloqueAgentes from '../components/Home/BloqueAgentes.vue';
 import BloquePropiedades from '../components/Home/BloquePropiedades.vue';
 import BloqueServicios from '../components/Home/BloqueServicios.vue';
 import BloqueSucursales from '../components/Home/BloqueSucursales.vue';
 import BloqueColaboradores from '../components/Home/BloqueColaboradores.vue';
+import Whatsapp from "../components/Whatsapp/Whatsapp.vue";
 
 export default {
-    mixins: [servicesPropiedades, servicesAgentes],
+    mixins: [servicesPropiedades, servicesAgentes, servicesWhatsapp],
     components: {
         BloquePropiedades,
         BloqueServicios,
         BloqueAgentes,
         BloqueSucursales,
         BloqueColaboradores,
+        Whatsapp,
 
         Swiper,
         SwiperSlide,
@@ -109,6 +113,7 @@ export default {
     created() {
         this.fetchAllPropiedades();
         this.fetchAllAgentes();
+        this.fetchAllWhatsapp();
     },
 }
 </script>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Propiedad;
 use App\Models\User;
 use App\Models\Cliente;
+use App\Models\Whatsapp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
@@ -96,5 +97,19 @@ class LandingController extends Controller
             ->get();
 
         return response()->json($agentes, 200);
+    }
+
+    public function whatsapp()
+    {
+        try {
+            $whatsapp = Whatsapp::first();
+            if (!$whatsapp) {
+                return response()->json(['message' => 'Whatsapp no encontrado'], 200);
+            }
+            return response()->json($whatsapp, 200);
+        } catch (\Exception $e) {
+            // Captura cualquier error inesperado
+            return response()->json(['message' => 'Server Error', 'error' => $e->getMessage()], 500);
+        }
     }
 }

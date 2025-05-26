@@ -159,6 +159,15 @@
                                 </a>
                             </li>
                         @endcan
+                        @can('whatsapp')
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('admin.whatsapp.index') ? 'active' : '' }}"
+                                    aria-current="page" href="{{ route('admin.whatsapp.index') }}">
+                                    <i class="bi bi-whatsapp"></i>
+                                    Whatsapp
+                                </a>
+                            </li>
+                        @endcan
                         <div class="perfil-mobile">
                             <hr class="my-3">
                             <li class="nav-item">
